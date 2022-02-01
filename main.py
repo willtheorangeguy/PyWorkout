@@ -1,6 +1,13 @@
 # PyWORKOUT CLI
 # (C) 2021 - 2022
 
+# Workout Options
+# Start workout - get time, list first item
+# Item complete - show time completed, start new time, show percentage, move to next workout
+# Workout finished - show total time, activities completed
+# Stats - time, percentage complete
+# Video - play video for that group
+
 # Import Statements
 import subprocess
 from datetime import datetime 
@@ -8,20 +15,20 @@ import time
 
 # Workout Lists
 groups = ["Abs", "Quads", "Glutes", "Triceps", "Biceps", "Back", "Chest"]
-sunday = ["Situps", "Reverse Crunches", "Bicycle Crunches", "Flutter Kicks", "Leg Raises", "Elbow Planks"]
-sunday_count = [25, 25, 25, 25, 25, 4]
-monday = ["Lunges", "High Knees", "Side Kicks", "Mountain Climbers", "Plank Jump Ins", "Lunges & Step Ups"]
+sunday = ["Situps\t", "Reverse Crunches", "Bicycle Crunches", "Flutter Kicks", "Leg Raises\t", "Elbow Planks\t"]
+sunday_count = [25, 25, 25, 25, 25, 2]
+monday = ["Lunges\t", "High Knees\t", "Side Kicks\t", "Mountain Climbers", "Plank Jump Ins", "Lunges & Step Ups"]
 monday_count = [50, 50, 50, 25, 25, 50]
-tuesday = ["Squats", "Donkey Kicks", "Bridges", "Step Ups", "Fly Steps", "Side Leg Raises"]
+tuesday = ["Squats\t", "Donkey Kicks\t", "Bridges\t", "Step Ups\t", "Fly Steps\t", "Side Leg Raises"]
 tuesday_count = [25, 25, 25, 25, 50, 50]
-wednesday = ["Diamond Pushups", "Tricep Dips", "Tricep Extensions", "Get Ups", "Punches", "Side to Side Chops"]
+wednesday = ["Diamond Pushups", "Tricep Dips\t", "Tricep Extensions", "Get Ups\t", "Punches\t", "Side to Side Chops"]
 wednesday_count = [25, 25, 25, 50, 50, 50]
-thursday = ["Backlists", "Doorframe Rows", "Decline Pushups", "Side Plank", "Pushups"]
-thursday_count = [50, 50, 25, 4, 25]
-friday = ["Scapular Shrugs", "Supermans", "Back Lifts", "Aternating Arm/Leg Plank", "Reverse Angels"]
-friday_count = [25, 25, 25, 4, 25]
-saturday = ["Pushups", "Chest Expansions", "Chest Squeezes", "Pike Pushups", "Shoulder Taps"]
-thursday_count = [25, 25, 25, 25, 25, 25]
+thursday = ["Backlists\t", "Doorframe Rows", "Decline Pushups", "Side Plank\t", "Pushups\t"]
+thursday_count = [50, 50, 25, 2, 25]
+friday = ["Scapular Shrugs", "Supermans\t", "Back Lifts\t", "Arm/Leg Plank", "Reverse Angels"]
+friday_count = [25, 25, 25, 2, 25]
+saturday = ["Pushups\t", "Chest Expansions", "Chest Squeezes", "Pike Pushups\t", "Shoulder Taps"]
+saturday_count = [25, 25, 25, 25, 25, 25]
 complete = []
 
 # Videos 
@@ -30,36 +37,46 @@ def openvideo():
 
 # Welcome
 print("         WELCOME TO PyWORKOUT")
-print("Please select a group from those below. \n")
+print("Please select a group from those below.")
 for i in range(len(groups)):
     print(str(i+1) + ". " + str(groups[i]))
-print("A reminder that today is: " + datetime.today().strftime('%A') + ". Consider option " + str((datetime.today().strftime('%w'))+1))
+print("A reminder that today is: " + datetime.today().strftime('%A') + ". Consider option " + str(int(datetime.today().strftime('%w')) + 1) + ".")
 
 # Display Workout Options
 run_options = True
 while run_options == True:
-    select = str(input("Group? "))
+    select = str(input("\nGroup? "))
     if select.lower() == "1" or select.lower() == "abs":
-        print("\nAb group selected!")
+        print("Ab muscle group selected!\n")
+        select = "abs"
         run_options = False
     elif select.lower() == "2" or select.lower() == "quads":
-        print("\nQuad group selected!")
+        print("Quad muscle group selected!\n")
+        select = "quads"
         run_options = False
     elif select.lower() == "3" or select.lower() == "glutes":
-        print("\nGlutes group selected!")
+        print("Glutes muscle group selected!\n")
+        select = "glutes"
         run_options = False
     elif select.lower() == "4" or select.lower() == "triceps":
-        print("\nTricep group selected!")
+        print("Tricep muscle group selected!\n")
+        select = "triceps"
         run_options = False
     elif select.lower() == "5" or select.lower() == "biceps":
-        print("\nBicep group selected!")
+        print("Bicep muscle group selected!\n")
+        select = "biceps"
         run_options = False
     elif select.lower() == "6" or select.lower() == "back":
-        print("\nBack group selected!")
+        print("Back muscle group selected!\n")
+        select = "back"
         run_options = False
     elif select.lower() == "7" or select.lower() == "chest":
-        print("\nChest group selected!")
+        print("Chest muscle group selected!\n")
+        select = "chest"
         run_options = False
+    elif select.lower() == "quit":
+        exit()
+        break 
     else:
         print("Sorry that is incorrect. Please try again!")
         run_options = True
@@ -68,12 +85,40 @@ while run_options == True:
 run_activity = True
 while run_activity == True:
     activity = str(input("What do you want to do? "))
-    if activity.lower() == "start":
-        start_time = time.gettime()
-        print("Starting Workout...")
-    elif activity.lower() == "list":
-        print("Listing activities...")
-    elif activity.lower() == "percent":
-        print("Percent complete and to go")
-    elif activity.lower() == "done":
-        print("Workout finished")
+    if activity.lower() == "list":
+        if select == "abs":
+            for i in range(len(sunday)):
+                print(str(i+1) + ". " + str(sunday[i]) + "\t 2 Reps of " + str(sunday_count[i]))
+            print("")
+        elif select == "quads":
+            for i in range(len(monday)):
+                print(str(i+1) + ". " + str(monday[i]) + "\t 2 Reps of " + str(monday_count[i]))
+            print("")
+        elif select == "glutes":
+            for i in range(len(tuesday)):
+                print(str(i+1) + ". " + str(tuesday[i]) + "\t 2 Reps of " + str(tuesday_count[i]))
+            print("")
+        elif select == "triceps":
+            for i in range(len(wednesday)):
+                print(str(i+1) + ". " + str(wednesday[i]) + "\t 2 Reps of " + str(wednesday_count[i]))
+            print("")
+        elif select == "biceps":
+            for i in range(len(thursday)):
+                print(str(i+1) + ". " + str(thursday[i]) + "\t 2 Reps of " + str(thursday_count[i]))
+            print("")
+        elif select == "back":
+            for i in range(len(friday)):
+                print(str(i+1) + ". " + str(friday[i]) + "\t 2 Reps of " + str(friday_count[i]))
+            print("")
+        elif select == "chest":
+            for i in range(len(saturday)):
+                print(str(i+1) + ". " + str(saturday[i]) + "\t 2 Reps of " + str(saturday_count[i]))
+            print("")
+        run_activity = True 
+    elif activity.lower() == "quit":
+        run_activity = False
+        exit()
+        break 
+    else:
+        print("Sorry that is not an option. Please see this list of options below:")
+        run_activity = True 
