@@ -2,7 +2,6 @@
 # (C) 2021 - 2022
 
 # Workout Options
-# Start workout - get time, list first item
 # Item complete - show time completed, start new time, show percentage, move to next workout
 # Workout finished - show total time, activities completed
 # Stats - time, percentage complete
@@ -10,12 +9,12 @@
 
 # Import Statements
 import subprocess
-from datetime import datetime 
-import time 
+from datetime import datetime, date 
+import time
 
 # Workout Lists
 groups = ["Abs", "Quads", "Glutes", "Triceps", "Biceps", "Back", "Chest"]
-sunday = ["Situps\t", "Reverse Crunches", "Bicycle Crunches", "Flutter Kicks", "Leg Raises\t", "Elbow Planks\t"]
+abs = ["Situps\t", "Reverse Crunches", "Bicycle Crunches", "Flutter Kicks", "Leg Raises\t", "Elbow Planks\t"]
 sunday_count = [25, 25, 25, 25, 25, 2]
 monday = ["Lunges\t", "High Knees\t", "Side Kicks\t", "Mountain Climbers", "Plank Jump Ins", "Lunges & Step Ups"]
 monday_count = [50, 50, 50, 25, 25, 50]
@@ -35,6 +34,12 @@ complete = []
 def openvideo():
     sunday = subprocess.Popen(["C:\Program Files\VideoLAN\VLC\vlc.exe", "file:\\\D:\Videos\Workout Videos\10 Minute Ab Workout.mp4"])
 
+# Percentage
+def percent(group, no):
+    num = int((no/len(group))*100)
+    num = str(num) + "%"
+    return num 
+
 # Welcome
 print("         WELCOME TO PyWORKOUT")
 print("Please select a group from those below.")
@@ -45,6 +50,7 @@ print("A reminder that today is: " + datetime.today().strftime('%A') + ". Consid
 # Display Workout Options
 run_options = True
 while run_options == True:
+    global select 
     select = str(input("\nGroup? "))
     if select.lower() == "1" or select.lower() == "abs":
         print("Ab muscle group selected!\n")
@@ -88,11 +94,46 @@ while run_activity == True:
     if activity.lower() == "list":
         if select == "abs":
             for i in range(len(sunday)):
-                print(str(i+1) + ". " + str(sunday[i]) + "\t 2 Reps of " + str(sunday_count[i]))
+                print(str(i+1) + ". " + str(sunday[i]) + "\t 2 Sets of " + str(sunday_count[i]) + " Reps")
             print("")
         elif select == "quads":
             for i in range(len(monday)):
-                print(str(i+1) + ". " + str(monday[i]) + "\t 2 Reps of " + str(monday_count[i]))
+                print(str(i+1) + ". " + str(monday[i]) + "\t 2 Sets of " + str(monday_count[i]) + " Reps")
+            print("")
+        elif select == "glutes":
+            for i in range(len(tuesday)):
+                print(str(i+1) + ". " + str(tuesday[i]) + "\t 2 Sets of " + str(tuesday_count[i]) + " Reps")
+            print("")
+        elif select == "triceps":
+            for i in range(len(wednesday)):
+                print(str(i+1) + ". " + str(wednesday[i]) + "\t 2 Sets of " + str(wednesday_count[i]) + " Reps")
+            print("")
+        elif select == "biceps":
+            for i in range(len(thursday)):
+                print(str(i+1) + ". " + str(thursday[i]) + "\t 2 Sets of " + str(thursday_count[i]) + " Reps")
+            print("")
+        elif select == "back":
+            for i in range(len(friday)):
+                print(str(i+1) + ". " + str(friday[i]) + "\t 2 Sets of " + str(friday_count[i]) + " Reps")
+            print("")
+        elif select == "chest":
+            for i in range(len(saturday)):
+                print(str(i+1) + ". " + str(saturday[i]) + "\t 2 Sets of " + str(saturday_count[i]) + " Reps")
+            print("")
+        run_activity = True 
+    elif activity.lower() == "start":
+        global activity_num
+        global start_time 
+        start_time = date.today()
+        activity_num = 0
+        print("You have started the " + select + " muscle group. ")
+        print("The current time is: " + str(time.strftime("%H:%M:%S")) + " - " + str(date.today()-start_time) + " has elapsed.")
+        print("You have completed: " + percent(select, 0))
+        if select == "abs":
+            print("Please complete 2 Sets of " + str(sunday_count[activity_num]) + " Reps of " + str(abs[activity_num]))
+        elif select == "quads":
+            for i in range(len(monday)):
+                print(str(i+1) + ". " + str(monday[i]) + "\t 2 Sets of " + str(monday_count[i]))
             print("")
         elif select == "glutes":
             for i in range(len(tuesday)):
@@ -114,6 +155,41 @@ while run_activity == True:
             for i in range(len(saturday)):
                 print(str(i+1) + ". " + str(saturday[i]) + "\t 2 Reps of " + str(saturday_count[i]))
             print("")
+        print("")
+        activity_num = activity_num + 1
+        run_activity = True 
+    elif activity.lower() == "next":
+        print("You are in the " + select + " muscle group. ")
+        print("The current time is: " + str(time.strftime("%H:%M:%S")) + " - " + str(date.today()-start_time) + " has elapsed.")
+        print("You have completed: " + percent(select, activity_num))
+        if select == "abs":
+            print("Please complete 2 Sets of " + str(sunday_count[activity_num]) + " Reps of " + str(sunday[activity_num]))
+        elif select == "quads":
+            for i in range(len(monday)):
+                print(str(i+1) + ". " + str(monday[i]) + "\t 2 Sets of " + str(monday_count[i]))
+            print("")
+        elif select == "glutes":
+            for i in range(len(tuesday)):
+                print(str(i+1) + ". " + str(tuesday[i]) + "\t 2 Reps of " + str(tuesday_count[i]))
+            print("")
+        elif select == "triceps":
+            for i in range(len(wednesday)):
+                print(str(i+1) + ". " + str(wednesday[i]) + "\t 2 Reps of " + str(wednesday_count[i]))
+            print("")
+        elif select == "biceps":
+            for i in range(len(thursday)):
+                print(str(i+1) + ". " + str(thursday[i]) + "\t 2 Reps of " + str(thursday_count[i]))
+            print("")
+        elif select == "back":
+            for i in range(len(friday)):
+                print(str(i+1) + ". " + str(friday[i]) + "\t 2 Reps of " + str(friday_count[i]))
+            print("")
+        elif select == "chest":
+            for i in range(len(saturday)):
+                print(str(i+1) + ". " + str(saturday[i]) + "\t 2 Reps of " + str(saturday_count[i]))
+            print("")
+        print("")
+        activity_num = activity_num + 1
         run_activity = True 
     elif activity.lower() == "quit":
         run_activity = False
