@@ -79,7 +79,7 @@ while run_options == True:
         exit()
         break 
     else:
-        print("Sorry that is incorrect. Please try again!")
+        print("Sorry that is incorrect. Please try again! \n")
         run_options = True
 
 # Ask What They Want to Do
@@ -90,39 +90,31 @@ while run_activity == True:
         if select == "abs":
             for i in range(len(abs)):
                 print(str(i+1) + ". " + str(abs[i]) + "\t 2 Sets of " + str(abs_count[i]) + " Reps")
-            print("")
         elif select == "quads":
             for i in range(len(quads)):
                 print(str(i+1) + ". " + str(quads[i]) + "\t 2 Sets of " + str(quads_count[i]) + " Reps")
-            print("")
         elif select == "glutes":
             for i in range(len(glutes)):
                 print(str(i+1) + ". " + str(glutes[i]) + "\t 2 Sets of " + str(glutes_count[i]) + " Reps")
-            print("")
         elif select == "triceps":
             for i in range(len(glutes)):
                 print(str(i+1) + ". " + str(triceps[i]) + "\t 2 Sets of " + str(triceps_count[i]) + " Reps")
-            print("")
         elif select == "biceps":
             for i in range(len(biceps)):
                 print(str(i+1) + ". " + str(biceps[i]) + "\t 2 Sets of " + str(biceps_count[i]) + " Reps")
-            print("")
         elif select == "back":
             for i in range(len(back)):
                 print(str(i+1) + ". " + str(back[i]) + "\t 2 Sets of " + str(back_count[i]) + " Reps")
-            print("")
         elif select == "chest":
             for i in range(len(chest)):
                 print(str(i+1) + ". " + str(chest[i]) + "\t 2 Sets of " + str(chest_count[i]) + " Reps")
-            print("")
+        print("")
         run_activity = True 
     elif activity.lower() == "start":
         global activity_num
-        global start_time 
-        start_time = date.today()
         activity_num = 0
         print("You have started the " + select + " muscle group. ")
-        print("The current time is: " + str(time.strftime("%H:%M:%S")) + " - " + str(date.today()-start_time) + " has elapsed.")
+        print("The current time is: " + str(time.strftime("%H:%M:%S")))
         if select == "abs":
             print("You have completed: " + str((int(activity_num/len(abs_count)))) + "%")
             print("Please complete 2 Sets of " + str(abs_count[activity_num]) + " Reps of " + str(abs[activity_num]))
@@ -148,29 +140,35 @@ while run_activity == True:
         activity_num = activity_num + 1
         run_activity = True 
     elif activity.lower() == "next":
-        print("You are in the " + select + " muscle group. ")
-        print("The current time is: " + str(time.strftime("%H:%M:%S")) + " - " + str(date.today()-start_time) + " has elapsed.")
-        if select == "abs":
-            print("You have completed: " + str((int(activity_num/len(abs_count)))) + "%")
-            print("Please complete 2 Sets of " + str(abs_count[activity_num]) + " Reps of " + str(abs[activity_num]))
-        elif select == "quads":
-            print("You have completed: " + str((int(activity_num/len(quads_count)))) + "%")
-            print("Please complete 2 Sets of " + str(quads_count[activity_num]) + " Reps of " + str(quads[activity_num]))
-        elif select == "glutes":
-            print("You have completed: " + str((int(activity_num/len(glutes_count)))) + "%")
-            print("Please complete 2 Sets of " + str(glutes_count[activity_num]) + " Reps of " + str(glutes[activity_num]))
-        elif select == "triceps":
-            print("You have completed: " + str((int(activity_num/len(triceps_count)))) + "%")
-            print("Please complete 2 Sets of " + str(triceps_count[activity_num]) + " Reps of " + str(triceps[activity_num]))
-        elif select == "biceps":
-            print("You have completed: " + str((int(activity_num/len(biceps_count)))) + "%")
-            print("Please complete 2 Sets of " + str(biceps_count[activity_num]) + " Reps of " + str(biceps[activity_num]))
-        elif select == "back":
-            print("You have completed: " + str((int(activity_num/len(back_count)))) + "%")
-            print("Please complete 2 Sets of " + str(back_count[activity_num]) + " Reps of " + str(back[activity_num]))
-        elif select == "chest":
-            print("You have completed: " + str((int(activity_num/len(chest_count)))) + "%")
-            print("Please complete 2 Sets of " + str(chest_count[activity_num]) + " Reps of " + str(chest[activity_num]))
+        while (activity_num-1) <= len(select)+1:
+            print("You are in the " + select + " muscle group. ")
+            print("The current time is: " + str(time.strftime("%H:%M:%S")))
+            if select == "abs":
+                print("You have completed: " + str((int(activity_num/len(abs_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(abs_count[activity_num]) + " Reps of " + str(abs[activity_num]) + "\n")
+            elif select == "quads":
+                print("You have completed: " + str((int(activity_num/len(quads_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(quads_count[activity_num]) + " Reps of " + str(quads[activity_num]) + "\n")
+            elif select == "glutes":
+                print("You have completed: " + str((int(activity_num/len(glutes_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(glutes_count[activity_num]) + " Reps of " + str(glutes[activity_num]) + "\n")
+            elif select == "triceps":
+                print("You have completed: " + str((int(activity_num/len(triceps_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(triceps_count[activity_num]) + " Reps of " + str(triceps[activity_num]) + "\n")
+            elif select == "biceps":
+                print("You have completed: " + str((int(activity_num/len(biceps_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(biceps_count[activity_num]) + " Reps of " + str(biceps[activity_num]) + "\n")
+            elif select == "back":
+                print("You have completed: " + str((int(activity_num/len(back_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(back_count[activity_num]) + " Reps of " + str(back[activity_num]) + "\n")
+            elif select == "chest":
+                print("You have completed: " + str((int(activity_num/len(chest_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(chest_count[activity_num]) + " Reps of " + str(chest[activity_num]) + "\n") 
+            break
+        else:
+            print("You have just completed the last activity!")
+            print("Run the `end` command to complete the workout. \n")
+            run_activity = True
         activity_num = activity_num + 1
         run_activity = True 
     elif activity.lower() == "quit":
@@ -179,4 +177,5 @@ while run_activity == True:
         break 
     else:
         print("Sorry that is not an option. Please see this list of options below:")
+        print("")
         run_activity = True 
