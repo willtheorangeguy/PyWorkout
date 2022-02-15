@@ -10,7 +10,7 @@
 
 # Import Statements
 import subprocess
-from datetime import datetime, date 
+from datetime import datetime
 import time
 
 # Workout Lists
@@ -113,6 +113,8 @@ while run_activity == True:
     elif activity.lower() == "start":
         global activity_num
         activity_num = 0
+        global start
+        start = datetime.now()
         print("You have started the " + select + " muscle group. ")
         print("The current time is: " + str(time.strftime("%H:%M:%S")))
         if select == "abs":
@@ -140,10 +142,11 @@ while run_activity == True:
         activity_num = activity_num + 1
         run_activity = True 
     elif activity.lower() == "next":
-        while (activity_num-1) <= len(select)+1:
-            print("You are in the " + select + " muscle group. ")
-            print("The current time is: " + str(time.strftime("%H:%M:%S")))
-            if select == "abs":
+        now = datetime.now()
+        print("You are in the " + select + " muscle group. ")
+        print("The current time is: " + str(time.strftime("%H:%M:%S")) + ". " + str(now-start) + " has elapsed.")
+        if select == "abs":
+            if activity_num < 6:
                 print("You have completed: " + str((int(activity_num/len(abs_count)*100))) + "%")
                 print("Please complete 2 Sets of " + str(abs_count[activity_num]) + " Reps of " + str(abs[activity_num]) + "\n")
             elif select == "quads":
