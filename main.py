@@ -153,23 +153,47 @@ while run_activity == True:
                 print("You have completed all the workouts for this set!")
                 print("Run the `end` command to finish the workout. \n")
         elif select == "quads":
-            print("You have completed: " + str((int(activity_num/len(quads_count)*100))) + "%")
-            print("Please complete 2 Sets of " + str(quads_count[activity_num]) + " Reps of " + str(quads[activity_num]) + "\n")
+            if activity_num < 6:
+                print("You have completed: " + str((int(activity_num/len(quads_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(quads_count[activity_num]) + " Reps of " + str(quads[activity_num]) + "\n")
+            else:
+                print("You have completed all the workouts for this set!")
+                print("Run the `end` command to finish the workout. \n")
         elif select == "glutes":
-            print("You have completed: " + str((int(activity_num/len(glutes_count)*100))) + "%")
-            print("Please complete 2 Sets of " + str(glutes_count[activity_num]) + " Reps of " + str(glutes[activity_num]) + "\n")
+            if activity_num < 6:
+                print("You have completed: " + str((int(activity_num/len(glutes_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(glutes_count[activity_num]) + " Reps of " + str(glutes[activity_num]) + "\n")
+            else:
+                print("You have completed all the workouts for this set!")
+                print("Run the `end` command to finish the workout. \n")
         elif select == "triceps":
-            print("You have completed: " + str((int(activity_num/len(triceps_count)*100))) + "%")
-            print("Please complete 2 Sets of " + str(triceps_count[activity_num]) + " Reps of " + str(triceps[activity_num]) + "\n")
+            if activity_num < 6:
+                print("You have completed: " + str((int(activity_num/len(triceps_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(triceps_count[activity_num]) + " Reps of " + str(triceps[activity_num]) + "\n")
+            else:
+                print("You have completed all the workouts for this set!")
+                print("Run the `end` command to finish the workout. \n")
         elif select == "biceps":
-            print("You have completed: " + str((int(activity_num/len(biceps_count)*100))) + "%")
-            print("Please complete 2 Sets of " + str(biceps_count[activity_num]) + " Reps of " + str(biceps[activity_num]) + "\n")
+            if activity_num < 5:
+                print("You have completed: " + str((int(activity_num/len(biceps_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(biceps_count[activity_num]) + " Reps of " + str(biceps[activity_num]) + "\n")
+            else:
+                print("You have completed all the workouts for this set!")
+                print("Run the `end` command to finish the workout. \n")
         elif select == "back":
-            print("You have completed: " + str((int(activity_num/len(back_count)*100))) + "%")
-            print("Please complete 2 Sets of " + str(back_count[activity_num]) + " Reps of " + str(back[activity_num]) + "\n")
+            if activity_num < 5:
+                print("You have completed: " + str((int(activity_num/len(back_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(back_count[activity_num]) + " Reps of " + str(back[activity_num]) + "\n")
+            else:
+                print("You have completed all the workouts for this set!")
+                print("Run the `end` command to finish the workout. \n")
         elif select == "chest":
-            print("You have completed: " + str((int(activity_num/len(chest_count)*100))) + "%")
-            print("Please complete 2 Sets of " + str(chest_count[activity_num]) + " Reps of " + str(chest[activity_num]) + "\n") 
+            if activity_num < 6:
+                print("You have completed: " + str((int(activity_num/len(chest_count)*100))) + "%")
+                print("Please complete 2 Sets of " + str(chest_count[activity_num]) + " Reps of " + str(chest[activity_num]) + "\n")
+            else:
+                print("You have completed all the workouts for this set!")
+                print("Run the `end` command to finish the workout. \n")
         activity_num = activity_num + 1
         run_activity = True 
     elif activity.lower() == "quit":
