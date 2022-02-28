@@ -55,13 +55,13 @@
 
 ## Download
 
-You can [download]() the source code to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python]().**
+You can **[download](https://github.com/willtheorangeguy/PyWorkout/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
 
-You can [download]() the latest executable version of PyWorkout for Windows. **This does not require Python.**
+You can **[download](https://github.com/willtheorangeguy/PyWorkout/releases/latest) the latest executable version** of PyWorkout for Windows. **This does not require Python.**
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Python]() installed on your computer. If you would rather not use Git, you can just download the scripts from GitHub above. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Python](https://www.python.org/downloads/) installed on your computer. If you would rather not use Git, you can just download the scripts from GitHub above. From your command line:
 
 ```bash
 # Clone this repository
@@ -81,7 +81,13 @@ $ python gui.py
 
 ## Contributing
 
+Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/willtheorangeguy/PyWorkout/compare).
+
+Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
+
 ## Changelog
+
+See the [`CHANGELOG.md`](CHANGELOG.md) file for details.
 
 ## Credits
 
