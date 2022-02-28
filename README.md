@@ -1,20 +1,13 @@
 <!-- Logo -->
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="PyWorkout">
+  <img src="" alt="PyWorkout">
   <br>
   PyWorkout
   <br>
 </h1>
 
-<<<<<<< Updated upstream
-![](https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/fullcode.png)
-
-## Usage
-Make sure you have the [Python Interpreter](https://www.python.org/) installed. 
-=======
 <!-- Copy -->
 <h4 align="center">A minimal CLI to keep you inspired during your workout!</h4>
->>>>>>> Stashed changes
 
 <!-- Badges -->
 <div align="center">
@@ -55,8 +48,8 @@ Make sure you have the [Python Interpreter](https://www.python.org/) installed.
   <a href="#key-features">Key Features</a> •
   <a href="#download">Download</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#Support">Support</a> •
-  <a href="#Credits">Credits</a> •
+  <a href="#support">Support</a> •
+  <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
@@ -120,14 +113,6 @@ This software uses the following open source packages:
 
 ## Support
 
-<a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
-<a href="https://www.patreon.com/amitmerchant">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
 ## You may also like...
 
 - [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
@@ -135,7 +120,7 @@ This software uses the following open source packages:
 
 ## License
 
-MIT
+GNU GPL
 
 ---
 
