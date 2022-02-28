@@ -12,35 +12,19 @@
 <!-- Badges -->
 <div align="center">
   <!-- Stability -->
-  <a href="https://nodejs.org/api/documentation.html#documentation_stability_index">
-    <img src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square"
-      alt="API stability" />
-  </a>
-  <!-- NPM version -->
-  <a href="https://npmjs.org/package/choo">
-    <img src="https://img.shields.io/npm/v/choo.svg?style=flat-square"
-      alt="NPM version" />
-  </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/choojs/choo">
-    <img src="https://img.shields.io/travis/choojs/choo/master.svg?style=flat-square"
-      alt="Build Status" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://codecov.io/github/choojs/choo">
-    <img src="https://img.shields.io/codecov/c/github/choojs/choo/master.svg?style=flat-square"
-      alt="Test Coverage" />
-  </a>
+  <img alt="GitHub Actions State" src="https://img.shields.io/github/workflow/status/willtheorangeguy/PyWorkout/Pylint">
+  <!-- Version -->
+  <img alt="GitHub Version" src="https://img.shields.io/github/v/release/willtheorangeguy/PyWorkout">
+  <!-- Issues -->
+  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/willtheorangeguy/PyWorkout">
+  <!-- Pull Requests -->
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/willtheorangeguy/PyWorkout">
+  <!-- Discord -->
+  <img alt="Discord Server ID" src="https://img.shields.io/discord/947657440579711016">
   <!-- Downloads -->
-  <a href="https://npmjs.org/package/choo">
-    <img src="https://img.shields.io/npm/dt/choo.svg?style=flat-square"
-      alt="Download" />
-  </a>
-  <!-- Standard -->
-  <a href="https://standardjs.com">
-    <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square"
-      alt="Standard" />
-  </a>
+  <img alt="Downloads" src="https://img.shields.io/github/downloads/willtheorangeguy/PyWorkout/total">
+  <!-- Language Count -->
+  <img alt="GitHub Languages" src="https://img.shields.io/github/languages/count/willtheorangeguy/PyWorkout">
 </div>
 
 <!-- Navigation -->
