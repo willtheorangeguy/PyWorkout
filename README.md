@@ -1,6 +1,8 @@
 # PyWorkout
 A simple commmand line application to keep me inspired during my workout! Tracks workout activities, provides statistics and plays videos. 
 
+![](https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/fullcode.png)
+
 ## Usage
 Make sure you have the [Python Interpreter](https://www.python.org/) installed. 
 
