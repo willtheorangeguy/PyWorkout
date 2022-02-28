@@ -87,7 +87,7 @@ Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDU
 
 ## Changelog
 
-See the [`CHANGELOG.md`](CHANGELOG.md) file for details.
+See the [`CHANGELOG`](CHANGELOG.md) file for details.
 
 ## Credits
 
