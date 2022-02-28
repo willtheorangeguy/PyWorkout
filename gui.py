@@ -1,3 +1,7 @@
+# PyWorkout GUI
+# Copyright (C) 2021-2022
+# This is the GUI frontend for the PyWorkout CLI interface. It is not yet completed.
+
 # Import Statements
 from tkinter import *
 from tkinter.ttk import *

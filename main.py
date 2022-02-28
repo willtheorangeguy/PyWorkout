@@ -1,14 +1,12 @@
 # PyWORKOUT CLI
 # (C) 2021 - 2022
 
-# Workout Options
-# Stats - time, percentage complete
-# Video - play video for that group
-
 # Import Statements
-import subprocess
 from datetime import datetime
 import time
+import os
+import sys
+import subprocess
 
 # Workout Lists
 groups = ["Abs", "Quads", "Glutes", "Triceps", "Biceps", "Back", "Chest"]
@@ -27,10 +25,24 @@ back_count = [25, 25, 25, 2, 25]
 chest = ["Pushups\t", "Chest Expansions", "Chest Squeezes", "Pike Pushups\t", "Shoulder Taps"]
 chest_count = [25, 25, 25, 25, 25, 25]
 complete = []
+times = []
 
-# Videos 
-def openvideo():
-    sunday = subprocess.Popen(["C:\Program Files\VideoLAN\VLC\vlc.exe", "file:\\\D:\Videos\Workout Videos\10 Minute Ab Workout.mp4"])
+# Video File Paths
+abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4" # change these to personal video path
+quads_video = "D:\\Videos\\Workout Videos\\12 Min Leg Workout.mp4"
+glutes_video = "D:\\Videos\\Workout Videos\\10 Minute Glute Bridge Workout.mp4"
+triceps_video = "D:\\Videos\\Workout Videos\\10 Minute Upper Body Workout.mp4"
+biceps_video = "D:\\Videos\\Workout Videos\\15 Minute Full Body HIIT Workout.mp4"
+back_video = "D:\\Videos\\Workout Videos\\20 Minute Full Body Workout.mp4"
+chest_video = "D:\\Videos\\Workout Videos\\15 Minute Intense Bodyweight Workout.mp4"
+
+# Video Function
+def video(path):
+    if sys.platform == "win32":
+        os.startfile(path)
+    else:
+        opener = "open" if sys.platform == "darwin" else "xdg-open"
+        subprocess.call([opener, path])   
 
 # Welcome
 print("         WELCOME TO PyWORKOUT")
@@ -112,6 +124,7 @@ while run_activity == True:
         activity_num = 0
         global start
         start = datetime.now()
+        times.append(start)
         print("You have started the " + select + " muscle group. ")
         print("The current time is: " + str(time.strftime("%H:%M:%S")))
         if select == "abs":
@@ -147,6 +160,7 @@ while run_activity == True:
         run_activity = True 
     elif activity.lower() == "next":
         now = datetime.now()
+        times.append(now)
         print("You are in the " + select + " muscle group. ")
         print("The current time is: " + str(time.strftime("%H:%M:%S")) + ". " + str(now-start) + " has elapsed.")
         if select == "abs":
@@ -212,17 +226,82 @@ while run_activity == True:
         print("You are in the " + select + " muscle group. ")
         print("The current time is: " + str(time.strftime("%H:%M:%S")) + ". " + str(now-start) + " has elapsed.")
         complete.pop(-1)
+        times.pop(-1)
         print("Activity skipped! Run the `next` command to move on. \n")
         run_activity = True
     elif activity.lower() == "end":
         now = datetime.now()
+        times.append(now)
         print("You have completed the " + select + " muscle group.")
         print("It took " + str(now-start) + " to complete this workout.")
-        print("The following activities were completed: ")
+        print("The following activities were completed (time elapsed):")
         for i in range(len(complete)):
-            print(str(i+1) + ". " + str(complete[i]))
+            print(str(i+1) + ". " + str(complete[i]) + "\t(" + str(times[i+1]-times[i]) + ")")
         print("Congratulations! \n")
-        run_activity = False
+        run_activity = True
+    elif activity.lower() == "stats":
+        try:
+            now = datetime.now()
+            times.append(now)
+            print("You are in the " + select + " muscle group. ")
+            print("The current time is: " + str(time.strftime("%H:%M:%S")) + ". " + str(now-start) + " has elapsed.")
+            print("The following activities have been completed (time elapsed):")
+            for i in range(len(complete)):
+                print(str(i+1) + ". " + str(complete[i]) + "\t(" + str(times[i+1]-times[i]) + ")")
+            print("The following activites still need to be completed:")
+            if select == "abs":
+                for i in range(len(abs)-len(complete)):
+                    print(str(i+1) + ". " + str(abs[i+activity_num]))
+            elif select == "quads":
+                for i in range(len(quads)-len(complete)):
+                    print(str(i+1) + ". " + str(quads[i+activity_num]))
+            elif select == "glutes":
+                for i in range(len(glutes)-len(complete)):
+                    print(str(i+1) + ". " + str(glutes[i+activity_num]))
+            elif select == "triceps":
+                for i in range(len(triceps)-len(complete)):
+                    print(str(i+1) + ". " + str(triceps[i+activity_num]))
+            elif select == "biceps":
+                for i in range(len(biceps)-len(complete)):
+                    print(str(i+1) + ". " + str(biceps[i+activity_num]))
+            elif select == "back":
+                for i in range(len(back)-len(complete)):
+                    print(str(i+1) + ". " + str(back[i+activity_num]))
+            elif select == "chest":
+                for i in range(len(chest)-len(complete)):
+                    print(str(i+1) + ". " + str(chest[i+activity_num]))
+            print("")
+        except IndexError:
+            print("You cannot use both the `skip` and `stats` commands, sorry! \n")
+        run_activity = True
+    elif activity.lower() == "video":
+        now = datetime.now()
+        times.append(now)
+        print("You are in the " + select + " muscle group. ")
+        print("The current time is: " + str(time.strftime("%H:%M:%S")) + ". " + str(now-start) + " has elapsed.")
+        if select == "abs":
+            video(abs_video)
+            complete.append("Abs Video \t")
+        elif select == "quads":
+            video(quads_video)
+            complete.append("Quads Video \t")
+        elif select == "glutes":
+            video(glutes_video)
+            complete.append("Glutes Video")
+        elif select == "triceps":
+            video(triceps_video)
+            complete.append("Triceps Video")
+        elif select == "biceps":
+            video(biceps_video)
+            complete.append("Biceps Video\t")
+        elif select == "back":
+            video(back_video)
+            complete.append("Back Video \t")
+        elif select == "chest":
+            video(chest_video)
+            complete.append("Chest Video \t")
+        print("")
+        run_activity = True
     elif activity.lower() == "quit":
         run_activity = False
         exit()
@@ -235,7 +314,7 @@ while run_activity == True:
         print("next    Moves to the next workout activity.")
         print("skip    Skips the current workout activity.")
         print("end     Completes the workout and display full workout statistics.")
-        print("stats   Shows workout statistics at any point and time.")
+        print("stats   Shows workout statistics at any point (does not work with the `skip` command).")
         print("video   Opens the workout video assigned to each muscle group.")
         print("help    Prints this help text.")
         print("quit    Ends the program.")
@@ -248,7 +327,7 @@ while run_activity == True:
         print("next    Moves to the next workout activity.")
         print("skip    Skips the current workout activity.")
         print("end     Completes the workout and display full workout statistics.")
-        print("stats   Shows workout statistics at any point and time.")
+        print("stats   Shows workout statistics at any point.")
         print("video   Opens the workout video assigned to each muscle group.")
         print("help    Prints a similar help text.")
         print("quit    Ends the program. \n")
