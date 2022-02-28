@@ -49,9 +49,9 @@
   <a href="#download">Download</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#support">Support</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#contributing">Contributing</a> •
+  <a href="#changelog">Changelog</a> •
+  <a href="#credits">Credits & Contributors</a>
 </p>
 
 <!-- Screenshot(s) -->
@@ -95,6 +95,10 @@ $ python gui.py
 
 ## Support
 
+## Contributing
+
+## Changelog
+
 ## Credits
 
 This software uses the following open source packages:
@@ -106,6 +110,8 @@ This software uses the following open source packages:
 - [CodeMirror](http://codemirror.net/)
 - Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
 - [highlight.js](https://highlightjs.org/)
+
+## Contributors
 
 ## Related
 
@@ -121,10 +127,3 @@ This software uses the following open source packages:
 ## License
 
 GNU GPL
-
----
-
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
-
