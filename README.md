@@ -1,6 +1,6 @@
 <!-- Logo -->
 <h1 align="center">
-  <img src="" alt="PyWorkout">
+  <img src="https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/PyWorkout-logos.jpeg" width="300px" height="300px" alt="PyWorkout">
   <br>
   PyWorkout
   <br>
