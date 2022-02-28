@@ -91,34 +91,40 @@ See the [`CHANGELOG`](CHANGELOG.md) file for details.
 
 ## Credits
 
-This software uses the following open source packages:
+This software uses the following open source packages, projects, services or websites:
 
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
-
-| ![Github](https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png)| ![Python](https://www.python.org/static/community_logos/python-logo-generic.svg)| ![PyInstaller](https://pyinstaller.readthedocs.io/en/stable/_static/pyinstaller-draft1a-100_trans.png)  | ![cx_Freeze](https://pypi.org/static/images/logo-small.95de8436.svg)    |
-| :---------: | :----------: | :----------: | :----------: |
-| Github      | Python (PSF) | PyInstaller  | cx_Freeze    |
-| [Web](https://github.com/) - [Plans](https://github.com/pricing) | [Web](https://www.python.org/) - [Donate](https://psfmember.org/civicrm/contribute/transact?reset=1&id=2) | [Web](https://www.pyinstaller.org/) - [Donate](https://www.pyinstaller.org/funding.html#funding-by-individuals) | [Web](https://github.com/marcelotduarte/cx_Freeze) - [Install](https://pypi.org/project/cx-Freeze/) |
+<!-- Credits Table -->
+<table>
+  <tr>
+    <th align="center"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="150" height="150" alt="GitHub"/></th>
+    <th align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/182px-Python-logo-notext.svg.png" width="150" height="150" alt="PSF"/></th>
+    <th align="center"><img src="https://pyinstaller.readthedocs.io/en/v4.2/_static/pyinstaller-draft1a.ico" width="150" height="150" alt="PyInstaller"/></th>
+    <th align="center"><img src="https://pbs.twimg.com/profile_images/912151274551885824/sjzD5vK9_400x400.jpg" width="150" height="150" alt="Carbon"/></th>
+  </tr>
+  <tr>
+    <td align="center">GitHub</td>
+    <td align="center">Python Software Foundation</td>
+    <td align="center">PyInstaller</td>
+    <td align="center">Carbon</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/">Web</a> - <a href="https://github.com/pricing">Plans</a></td>
+    <td align="center"><a href="https://www.python.org/">Web</a> - <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&id=2">Donate</a></td>
+    <td align="center"><a href="https://pyinstaller.readthedocs.io/en/stable/">Web</a> - <a href="https://www.pyinstaller.org/funding.html#funding-by-individuals">Donate</a></td>
+    <td align="center"><a href="https://carbon.now.sh/">Web</a></td>
+  </tr>
+</table>
 
 ## Contributors
 
-## Related
-
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
-
-## Support
+* [@willtheorangeguy](https://github.com/willtheorangeguy) - Sponsor on [PayPal](https://paypal.me/wvdg44?country.x=CA&locale.x=en_US)
 
 ## You may also like...
 
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
+* [Running Calculator](https://github.com/willtheorangeguy/Running-Calculator) - A running speed calculator for any unit of distance. 
+* [Python Logo Widgets](https://github.com/willtheorangeguy/Python-Logo-Widgets) - Python Powered Logo widgets that can be added to any GUI project. 
+* [Random Lotto Number Chooser](https://github.com/willtheorangeguy/Random-Lotto-Number-Chooser) - Randomly pick lucky lotto numbers. 
 
 ## License
 
-GNU GPL
+This project is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) - see the [`LICENSE`](LICENSE.md) file for details.
