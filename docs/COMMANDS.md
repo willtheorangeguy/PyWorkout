@@ -1,4 +1,4 @@
-# PyWorkout Usage
+# PyWorkout Commands
 
 **The following commands are available in PyWorkout:**
 ```
