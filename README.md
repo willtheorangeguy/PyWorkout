@@ -55,7 +55,7 @@
 </p>
 
 <!-- Screenshot(s) -->
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/welcome.png)
 
 ## Key Features
 
