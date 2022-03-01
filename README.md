@@ -105,8 +105,7 @@ abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4" # change thes
 ```
 3. Running the `video` command will now include your local workout videos. 
 
-
-Customizing the list of workouts, workout activities and number of activities can be found in [`CUSTOMIZATION.md`](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs). More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/PyWorkout/wiki)**. 
+Customizing the list of workouts, workout activities and number of activities can be found in [`CUSTOMIZATION.md`](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs). More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/PyWorkout/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/willtheorangeguy/PyWorkout/discussions/new)** or join our **[Discord](https://discord.gg/YFMcACG9rh)**. 
 
 ## Contributing
 
