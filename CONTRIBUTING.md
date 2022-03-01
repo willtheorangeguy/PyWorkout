@@ -13,6 +13,8 @@ To get an overview of the project, read the [README](README.md). Here are some r
 - [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 - [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests).
 
+Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/willtheorangeguy/PyWorkout/compare).
+
 ## How to Contribute
 
 ### Did you find a bug?
