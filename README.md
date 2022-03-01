@@ -89,6 +89,7 @@ skip    Skips the current workout activity.
 end     Completes the workout and display full workout statistics.
 stats   Shows workout statistics at any point (does not work with the `skip` command).
 video   Opens the workout video assigned to each muscle group.
+license Shows the license.
 help    Prints this help text.
 quit    Ends the program.
 ```
