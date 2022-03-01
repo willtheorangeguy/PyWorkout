@@ -9,6 +9,7 @@ skip    Skips the current workout activity.
 end     Completes the workout and display full workout statistics.
 stats   Shows workout statistics at any point (does not work with the `skip` command).
 video   Opens the workout video assigned to each muscle group.
+license Shows the license. 
 help    Prints this help text.
 quit    Ends the program.
 ```
@@ -94,6 +95,10 @@ Launches the video assinged to each muscle group in the default video player for
 You are in the abs muscle group. 
 The current time is: 14:33:04. 0:00:01.564038 has elapsed.
 ```
+
+### `license`
+
+Shows the GNU GPL v3 license text. The full license can be accessed in the `LICENSE.md` file. 
 
 ### `help`
 
