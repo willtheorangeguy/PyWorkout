@@ -1,5 +1,19 @@
-# PyWORKOUT CLI
-# (C) 2021 - 2022
+"""
+PyWORKOUT CLI
+Copyright (C) <year>  <name of author>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
 
 # Import Statements
 from datetime import datetime
@@ -302,6 +316,11 @@ while run_activity == True:
             complete.append("Chest Video \t")
         print("")
         run_activity = True
+    elif activity.lower() == "license":
+        print("PyWorkout Copyright (C) 2021-2022  @willtheorangeguy")
+        print("This program comes with ABSOLUTELY NO WARRANTY; for details view the license.")
+        print("This is free software, and you are welcome to redistribute it")
+        print("under certain conditions; view the license for details. \n")
     elif activity.lower() == "quit":
         run_activity = False
         exit()
@@ -316,6 +335,7 @@ while run_activity == True:
         print("end     Completes the workout and display full workout statistics.")
         print("stats   Shows workout statistics at any point (does not work with the `skip` command).")
         print("video   Opens the workout video assigned to each muscle group.")
+        print("license Show the license.")
         print("help    Prints this help text.")
         print("quit    Ends the program.")
         print("More documentation can be found on Github. Enjoy using the program! \n")
@@ -329,6 +349,7 @@ while run_activity == True:
         print("end     Completes the workout and display full workout statistics.")
         print("stats   Shows workout statistics at any point.")
         print("video   Opens the workout video assigned to each muscle group.")
+        print("license Show the license.")
         print("help    Prints a similar help text.")
         print("quit    Ends the program. \n")
         run_activity = True
