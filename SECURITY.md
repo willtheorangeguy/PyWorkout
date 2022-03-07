@@ -2,7 +2,7 @@
 
 The security of our software products and services is serious, which includes all source code repositories managed through the GitHub user [@willtheorangeguy](https://github.com/willtheorangeguy/).
 
-If you believe you have found a security vulnerability in any repository that meets, please report it to us as described below in [Reporting a Vulnerability](#reporting-a-vulnerability).
+If you believe you have found a security vulnerability in any repository, please report it to us as described below in [Reporting a Vulnerability](#reporting-a-vulnerability).
 
 ## Supported Versions
 
