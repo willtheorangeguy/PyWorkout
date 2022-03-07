@@ -1,40 +1,54 @@
 # Changelog
 
 ## [v1.1.0](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v1.1.0)
+
 ### Added
-- License text to the top of each code file. 
+
+- License text to the top of each code file.
 
 ## [v1.0.0](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v1.0.0)
+
 ### Added
+
 - CLI
 
-### Changed 
+### Changed
+
 - GUI filenames
 
 ## [v0.1.0-beta](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v0.1.0-beta)
-### Added
-- GUI
-- Acurate timekeeping
 
-### Changed 
+### Added
+
+- GUI
+- Accurate timekeeping
+
+### Changed
+
 - Timer
 
-
 ## Template
-### Added 
+
+### Added
+
 - New features.
 
-### Changed 
+### Changed
+
 - Changes in existing functionality.
 
-### Deprecated 
+### Deprecated
+
 - Soon-to-be removed features.
 
-### Removed 
+### Removed
+
 - Now removed features.
 
 ### Fixed
+
 - Bug fixes.
 
-#### Security 
+#### Security
+
 - Vulnerabilities.

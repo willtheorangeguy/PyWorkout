@@ -1,6 +1,6 @@
 """
 PyWORKOUT CLI
-Copyright (C) 2022 @willtheorangeguy
+Copyright (C) 2021-2022  @willtheorangeguy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -262,7 +262,7 @@ while run_activity == True:
             print("The following activities have been completed (time elapsed):")
             for i in range(len(complete)):
                 print(str(i+1) + ". " + str(complete[i]) + "\t(" + str(times[i+1]-times[i]) + ")")
-            print("The following activites still need to be completed:")
+            print("The following activities still need to be completed:")
             if select == "abs":
                 for i in range(len(abs)-len(complete)):
                     print(str(i+1) + ". " + str(abs[i+activity_num]))
