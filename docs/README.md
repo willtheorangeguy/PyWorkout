@@ -9,6 +9,7 @@ This folder includes all of the docs for PyWorkout. More can be found on the [wi
 |   |   ├── PRIVACY.md
 |   |   ├── TERMS.md
 |   ├── USAGE.md
+|   ├── COMMANDS.md
 |   ├── CUSTOMIZATION.md
 |   ├── images
 └── README.md
