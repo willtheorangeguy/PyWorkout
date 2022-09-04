@@ -1,6 +1,6 @@
 # Security Policy
 
-The security of our software products and services is serious, which includes all source code repositories managed through the GitHub user [@willtheorangeguy](https://github.com/willtheorangeguy/).
+The security of our software products and services is serious, which includes all source code repositories managed by [Dog Face Development Company](https://github.com/orgs/Dog-Face-Development).
 
 If you believe you have found a security vulnerability in any repository, please report it to us as described below in [Reporting a Vulnerability](#reporting-a-vulnerability).
 
@@ -15,7 +15,7 @@ The following versions of PyWorkout are currently supported:
 
 ## Reporting a Vulnerability
 
-Please open an [issue](https://github.com/willtheorangeguy/PyWorkout/issues/new) to report a security vulnerability. Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
+Please open an [issue](https://github.com/Dog-Face-Development/PyWorkout/issues/new) to report a security vulnerability. Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
 
 * Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting, etc.)
 * Full paths of source file(s) related to the manifestation of the issue
@@ -26,4 +26,4 @@ Please open an [issue](https://github.com/willtheorangeguy/PyWorkout/issues/new)
 * Impact of the issue, including how an attacker might exploit the issue
 * This information will help us triage your report more quickly.
 
-Contributions should follow the [`CODE_OF_CONDUCT`](CODE_OF_CONDUCT.md) and [`CONTRIBUTING`](CONTRIBUTING.md) documents. 
+Contributions should follow the [`CODE_OF_CONDUCT`](CODE_OF_CONDUCT.md) and [`CONTRIBUTING`](CONTRIBUTING.md) documents.
