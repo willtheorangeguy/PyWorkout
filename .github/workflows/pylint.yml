@@ -2,6 +2,11 @@ name: Pylint
 
 on: [push]
 
+permissions:
+  checks: write
+  pull-requests: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,3 +26,8 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+    - uses: smelly-python/smell-my-pr@main
+      with: 
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        command: pipenv run smelly-python -d src
+        
