@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.2.0](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v1.2.0)
+
+### Added
+
+- Docker container.
+- PyPI package.
+
 ## [v1.1.0](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v1.1.0)
 
 ### Added
