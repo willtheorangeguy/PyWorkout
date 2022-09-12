@@ -1,0 +1,25 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "PyWorkout"
+version = "1.2.0"
+authors = [
+  { name= "willtheorangeguy" },
+]
+description = "A minimal CLI to keep you inspired during your workout!"
+readme = "README.md"
+license = { file="LICENSE.md" }
+requires-python = ">=3.9"
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Topic :: Other/Nonlisted Topic',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Dog-Face-Development/PyWorkout"
+"Bug Tracker" = "https://github.com/Dog-Face-Development/PyWorkout/issues"
