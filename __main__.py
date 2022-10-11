@@ -1,4 +1,4 @@
 from main import workout
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     workout()
