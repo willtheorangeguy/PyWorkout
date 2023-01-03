@@ -14,15 +14,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+import os
+import subprocess
+import sys
+import time
+from datetime import datetime
 
 # Import Statements
-from datetime import datetime
-import time
-import os
-import sys
-import subprocess
 
 # PyWorkout Function
+
+
 def workout():
     # Workout Lists
     groups = ["Abs", "Quads", "Glutes", "Triceps", "Biceps", "Back", "Chest"]
@@ -90,7 +92,8 @@ def workout():
     times = []
 
     # Video File Paths
-    abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4"  # change these to personal video path
+    # change these to personal video path
+    abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4"
     quads_video = "D:\\Videos\\Workout Videos\\12 Min Leg Workout.mp4"
     glutes_video = "D:\\Videos\\Workout Videos\\10 Minute Glute Bridge Workout.mp4"
     triceps_video = "D:\\Videos\\Workout Videos\\10 Minute Upper Body Workout.mp4"

@@ -15,12 +15,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-
-# Import Statements
+import time
+import tkinter.messagebox as box
 from tkinter import *
 from tkinter.ttk import *
-import tkinter.messagebox as box
-import time
+
+# Import Statements
 
 window = Tk()
 
@@ -28,6 +28,8 @@ window = Tk()
 window.title("PyWorkout")
 
 # Get Percentages
+
+
 def percentages(loc):
     step = 1
     percents = []
@@ -109,6 +111,8 @@ radio6 = Radiobutton(
 
 # Percentage Complete Return
 # Function
+
+
 def percent_dialog():
     value = str(activity_complete.get())
     if value.lower() == "plank" and first_round == True:
