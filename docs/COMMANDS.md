@@ -10,7 +10,7 @@ skip    Skips the current workout activity.
 end     Completes the workout and display full workout statistics.
 stats   Shows workout statistics at any point (does not work with the `skip` command).
 video   Opens the workout video assigned to each muscle group.
-license Shows the license. 
+license Shows the license.
 help    Prints this help text.
 quit    Ends the program.
 ```
@@ -94,7 +94,7 @@ You cannot use both the `skip` and `stats` commands, sorry!
 Launches the video assigned to each muscle group in the default video player for your device. **Must be configured by changing the `# Video File Paths` in `main.p`.** Example:
 
 ```text
-You are in the abs muscle group. 
+You are in the abs muscle group.
 The current time is: 14:33:04. 0:00:01.564038 has elapsed.
 ```
 
@@ -107,8 +107,8 @@ Shows the GNU GPL v3 license text. The full license can be accessed in the `LICE
 Prints a list of each of the available commands. Example:
 
 ```text
-PyWorkout - (C) 2021-2022
-Any of these options are available: 
+PyWorkout - (C) 2021-2023
+Any of these options are available:
 list    Lists the workout activities by muscle group.
 start   Starts the workout and displays the first workout activity.
 next    Moves to the next workout activity.
@@ -118,7 +118,7 @@ stats   Shows workout statistics at any point (does not work with the `skip` com
 video   Opens the workout video assigned to each muscle group.
 help    Prints this help text.
 quit    Ends the program.
-More documentation can be found on Github. Enjoy using the program! 
+More documentation can be found on Github. Enjoy using the program!
 ```
 
 ## `quit`
