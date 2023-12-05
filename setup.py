@@ -1,8 +1,11 @@
+"""Setup script for PyWorkout."""
+
 from setuptools import setup
 
 
 def readme():
-    with open("README.md") as f:
+    """Return the README file as a string."""
+    with open("README.md", encoding="UTF-8") as f:
         return f.read()
 
 

@@ -15,10 +15,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-import time
+#pylint: disable=unused-variable, global-statement, invalid-name
+
 import tkinter.messagebox as box
-from tkinter import *
-from tkinter.ttk import *
+from tkinter import Tk, Label, Radiobutton, StringVar, Frame, TOP, HORIZONTAL
+from tkinter.ttk import Button, Progressbar
 
 # Import Statements
 
@@ -31,18 +32,19 @@ window.title("PyWorkout")
 
 
 def percentages(loc):
+    """Returns the percentage of the workout complete."""
     step = 1
     percents = []
     for i in range(12):
-        percent = int((step / 12) * 100)
-        percents.append(percent)
+        completed = int((step / 12) * 100)
+        percents.append(completed)
         step += 1
     return str(percents[loc])
 
 
 # Titles
 activity = Label(window, text="ACTIVITY")
-perc = Label(window, text="PERCENTAGES")
+percent = Label(window, text="PERCENTAGES")
 complete = Label(window, text="SELECT PERCENTAGE COMPLETE")
 progress = Label(window, text="WORKOUT PROGRESS")
 
@@ -75,8 +77,9 @@ first_round = True
 
 
 def round_switch():
+    """Switches the round of the workout."""
     global first_round
-    if first_round == True:
+    if first_round is True:
         first_round = False
     else:
         first_round = True
@@ -114,90 +117,91 @@ radio6 = Radiobutton(
 
 
 def percent_dialog():
+    """Returns the percentage of the workout complete in a dialog box."""
     value = str(activity_complete.get())
-    if value.lower() == "plank" and first_round == True:
+    if value.lower() is "plank" and first_round is True:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(0) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(0)
+        progress_bar["value"] = percentages(0)
         window.update_idletasks()
-    elif value.lower() == "pushup" and first_round == True:
+    elif value.lower() is "pushup" and first_round is True:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(1) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(1)
+        progress_bar["value"] = percentages(1)
         window.update_idletasks()
-    elif value.lower() == "situp" and first_round == True:
+    elif value.lower() is "situp" and first_round is True:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(2) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(2)
+        progress_bar["value"] = percentages(2)
         window.update_idletasks()
-    elif value.lower() == "diamond" and first_round == True:
+    elif value.lower() is "diamond" and first_round is True:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(3) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(3)
+        progress_bar["value"] = percentages(3)
         window.update_idletasks()
-    elif value.lower() == "squat" and first_round == True:
+    elif value.lower() is "squat" and first_round is True:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(4) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(4)
+        progress_bar["value"] = percentages(4)
         window.update_idletasks()
-    elif value.lower() == "wallsit" and first_round == True:
+    elif value.lower() is "wallsit" and first_round is True:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(5) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(5)
+        progress_bar["value"] = percentages(5)
         window.update_idletasks()
-    elif value.lower() == "plank" and first_round == False:
+    elif value.lower() is "plank" and first_round is False:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(6) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(6)
+        progress_bar["value"] = percentages(6)
         window.update_idletasks()
-    elif value.lower() == "pushup" and first_round == False:
+    elif value.lower() is "pushup" and first_round is False:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(7) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(7)
+        progress_bar["value"] = percentages(7)
         window.update_idletasks()
-    elif value.lower() == "situp" and first_round == False:
+    elif value.lower() is "situp" and first_round is False:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(8) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(8)
+        progress_bar["value"] = percentages(8)
         window.update_idletasks()
-    elif value.lower() == "diamond" and first_round == False:
+    elif value.lower() is "diamond" and first_round is False:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(9) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(9)
+        progress_bar["value"] = percentages(9)
         window.update_idletasks()
-    elif value.lower() == "squat" and first_round == False:
+    elif value.lower() is "squat" and first_round is False:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(10) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(10)
+        progress_bar["value"] = percentages(10)
         window.update_idletasks()
-    elif value.lower() == "wallsit" and first_round == False:
+    elif value.lower() is "wallsit" and first_round is False:
         box.showinfo(
             "Workout Percentage",
             "You are " + percentages(11) + "%" + " complete! \nKeep it up!",
         )
-        bar["value"] = percentages(11)
+        progress_bar["value"] = percentages(11)
         window.update_idletasks()
     else:
         box.showerror("Whoops", "That percentage is not possible!")
@@ -209,12 +213,12 @@ percent_button = Button(
 )
 
 # Percentage Progress Bar
-bar = Progressbar(window, orient=HORIZONTAL, length=100, mode="determinate")
-progress_info = Label(window, text=str(bar["value"]) + "%")
+progress_bar = Progressbar(window, orient=HORIZONTAL, length=100, mode="determinate")
+progress_info = Label(window, text=str(progress_bar["value"]) + "%")
 
 # Pack
 activity.grid(row=1, column=1, padx=10)
-perc.grid(row=1, column=2, columnspan=2, padx=10)
+percent.grid(row=1, column=2, columnspan=2, padx=10)
 complete.grid(row=1, column=4, padx=10)
 progress.grid(row=1, column=5, padx=10)
 
@@ -249,7 +253,7 @@ radio6.pack(side=TOP)
 percent_button.pack(side=TOP, pady=5)
 percentage_frame.grid(row=3, rowspan=5, column=4, padx=10)
 
-bar.grid(row=2, column=5, padx=10, pady=5)
+progress_bar.grid(row=2, column=5, padx=10, pady=5)
 progress_info.grid(row=3, column=5, padx=10)
 
 # Sustain Window

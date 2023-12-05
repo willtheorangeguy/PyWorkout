@@ -14,6 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+
+#pylint: disable=redefined-builtin, global-variable-undefined
+
 import os
 import subprocess
 import sys
@@ -26,6 +29,7 @@ from datetime import datetime
 
 
 def workout():
+    """PyWorkout CLI"""
     # Workout Lists
     groups = ["Abs", "Quads", "Glutes", "Triceps", "Biceps", "Back", "Chest"]
     abs = [
@@ -112,8 +116,8 @@ def workout():
     # Welcome
     print("         WELCOME TO PyWORKOUT")
     print("Please select a group from those below.")
-    for i in range(len(groups)):
-        print(str(i + 1) + ". " + str(groups[i]))
+    for i, groups in enumerate(groups):
+        print(str(i + 1) + ". " + str(groups))
     print(
         "A reminder that today is: "
         + datetime.today().strftime("%A")
@@ -124,7 +128,7 @@ def workout():
 
     # Display Workout Options
     run_options = True
-    while run_options == True:
+    while run_options is True:
         global select
         select = str(input("\nGroup? "))
         if select.lower() == "1" or select.lower() == "abs":
@@ -156,19 +160,18 @@ def workout():
             select = "chest"
             run_options = False
         elif select.lower() == "quit":
-            exit()
-            break
+            sys.exit()
         else:
             print("Sorry that is incorrect. Please try again! \n")
             run_options = True
 
     # Ask What They Want to Do
     run_activity = True
-    while run_activity == True:
+    while run_activity is True:
         activity = str(input("What do you want to do? "))
         if activity.lower() == "list":
             if select == "abs":
-                for i in range(len(abs)):
+                for i, abs in enumerate(abs):
                     print(
                         str(i + 1)
                         + ". "
@@ -602,8 +605,7 @@ def workout():
             print("under certain conditions; view the license for details. \n")
         elif activity.lower() == "quit":
             run_activity = False
-            exit()
-            break
+            sys.exit()
         elif activity.lower() == "help":
             print("PyWorkout - (C) 2021-2023")
             print("Any of these options are available: ")
@@ -613,7 +615,8 @@ def workout():
             print("skip    Skips the current workout activity.")
             print("end     Completes the workout and display full workout statistics.")
             print(
-                "stats   Shows workout statistics at any point (does not work with the `skip` command)."
+                "stats   Shows workout statistics at any point \
+                    (does not work with the `skip` command)."
             )
             print("video   Opens the workout video assigned to each muscle group.")
             print("license Show the license.")
