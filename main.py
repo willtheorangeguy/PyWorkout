@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-#pylint: disable=redefined-builtin, global-variable-undefined
+#pylint: disable=redefined-builtin, global-variable-undefined, too-many-locals, too-many-branches, too-many-statements
 
 import os
 import subprocess
@@ -175,7 +175,7 @@ def workout():
                     print(
                         str(i + 1)
                         + ". "
-                        + str(abs[i])
+                        + str(abs)
                         + "\t 2 Sets of "
                         + str(abs_count[i])
                         + " Reps"
