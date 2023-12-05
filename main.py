@@ -181,21 +181,21 @@ def workout():
                         + " Reps"
                     )
             elif select == "quads":
-                for i in range(len(quads)):
+                for i, item in enumerate(quads):
                     print(
                         str(i + 1)
                         + ". "
-                        + str(quads[i])
+                        + str(item)
                         + "\t 2 Sets of "
                         + str(quads_count[i])
                         + " Reps"
                     )
             elif select == "glutes":
-                for i in range(len(glutes)):
+                for i, item in enumerate(glutes):
                     print(
                         str(i + 1)
                         + ". "
-                        + str(glutes[i])
+                        + str(item)
                         + "\t 2 Sets of "
                         + str(glutes_count[i])
                         + " Reps"
@@ -211,31 +211,31 @@ def workout():
                         + " Reps"
                     )
             elif select == "biceps":
-                for i in range(len(biceps)):
+                for i, item in enumerate(biceps):
                     print(
                         str(i + 1)
                         + ". "
-                        + str(biceps[i])
+                        + str(item)
                         + "\t 2 Sets of "
                         + str(biceps_count[i])
                         + " Reps"
                     )
             elif select == "back":
-                for i in range(len(back)):
+                for i, item in enumerate(back):
                     print(
                         str(i + 1)
                         + ". "
-                        + str(back[i])
+                        + str(item)
                         + "\t 2 Sets of "
                         + str(back_count[i])
                         + " Reps"
                     )
             elif select == "chest":
-                for i in range(len(chest)):
+                for i, item in enumerate(chest):
                     print(
                         str(i + 1)
                         + ". "
-                        + str(chest[i])
+                        + str(item)
                         + "\t 2 Sets of "
                         + str(chest_count[i])
                         + " Reps"
@@ -503,11 +503,11 @@ def workout():
             print("You have completed the " + select + " muscle group.")
             print("It took " + str(now - start) + " to complete this workout.")
             print("The following activities were completed (time elapsed):")
-            for i in range(len(complete)):
+            for i, item in enumerate(complete):
                 print(
                     str(i + 1)
                     + ". "
-                    + str(complete[i])
+                    + str(item)
                     + "\t("
                     + str(times[i + 1] - times[i])
                     + ")"
@@ -527,11 +527,11 @@ def workout():
                     + " has elapsed."
                 )
                 print("The following activities have been completed (time elapsed):")
-                for i in range(len(complete)):
+                for i, item in enumerate(complete):
                     print(
                         str(i + 1)
                         + ". "
-                        + str(complete[i])
+                        + str(item)
                         + "\t("
                         + str(times[i + 1] - times[i])
                         + ")"
