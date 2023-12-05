@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-#pylint: disable=redefined-builtin, global-variable-undefined, too-many-locals, too-many-branches, too-many-statements
+# pylint: disable=redefined-builtin, global-variable-undefined, too-many-locals, too-many-branches, too-many-statements
 
 import os
 import subprocess
