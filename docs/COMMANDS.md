@@ -107,7 +107,7 @@ Shows the GNU GPL v3 license text. The full license can be accessed in the `LICE
 Prints a list of each of the available commands. Example:
 
 ```text
-PyWorkout - (C) 2021-2023
+PyWorkout - (C) 2021-2024
 Any of these options are available:
 list    Lists the workout activities by muscle group.
 start   Starts the workout and displays the first workout activity.

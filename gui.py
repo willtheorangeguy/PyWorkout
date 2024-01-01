@@ -1,7 +1,7 @@
 # This is the GUI frontend for the PyWorkout CLI interface. It is not yet completed.
 """
 PyWORKOUT CLI
-Copyright (C) 2021-2023 @willtheorangeguy
+Copyright (C) 2021-2024 @willtheorangeguy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

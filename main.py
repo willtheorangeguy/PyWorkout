@@ -1,6 +1,6 @@
 """
 PyWORKOUT CLI
-Copyright (C) 2021-2023  @willtheorangeguy
+Copyright (C) 2021-2024  @willtheorangeguy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -597,7 +597,7 @@ def workout():
             print("")
             run_activity = True
         elif activity.lower() == "license":
-            print("PyWorkout Copyright (C) 2021-2023  @willtheorangeguy")
+            print("PyWorkout Copyright (C) 2021-2024  @willtheorangeguy")
             print(
                 "This program comes with ABSOLUTELY NO WARRANTY; for details view the license."
             )
@@ -607,7 +607,7 @@ def workout():
             run_activity = False
             sys.exit()
         elif activity.lower() == "help":
-            print("PyWorkout - (C) 2021-2023")
+            print("PyWorkout - (C) 2021-2024")
             print("Any of these options are available: ")
             print("list    Lists the workout activities by muscle group.")
             print("start   Starts the workout and displays the first workout activity.")
