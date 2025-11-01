@@ -308,11 +308,10 @@ class TestVideoFunctionality:
         # On Linux, should attempt to call xdg-open
         # Note: The actual call might fail due to invalid path, but we're testing the attempt
         printed_output = [str(call) for call in mock_print.call_args_list]
-        # Video timestamp should be added to output
-        assert (
-            any("Video" in str(call) for call in printed_output)
-            or mock_subprocess.called
-        )
+        # Verify video command was processed - either video text printed or subprocess called
+        video_text_found = any("Video" in str(call) for call in printed_output)
+        subprocess_was_called = mock_subprocess.called
+        assert video_text_found or subprocess_was_called, "Video command should print text or call subprocess"
 
 
 class TestWelcomeScreen:
