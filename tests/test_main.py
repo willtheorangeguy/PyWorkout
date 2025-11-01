@@ -311,7 +311,9 @@ class TestVideoFunctionality:
         # Verify video command was processed - either video text printed or subprocess called
         video_text_found = any("Video" in str(call) for call in printed_output)
         subprocess_was_called = mock_subprocess.called
-        assert video_text_found or subprocess_was_called, "Video command should print text or call subprocess"
+        assert (
+            video_text_found or subprocess_was_called
+        ), "Video command should print text or call subprocess"
 
 
 class TestWelcomeScreen:
