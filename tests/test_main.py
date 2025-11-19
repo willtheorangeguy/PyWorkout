@@ -5,17 +5,16 @@ Tests the core workout functionality including muscle group selection and workou
 
 import sys
 import os
-from unittest.mock import patch, MagicMock
-from datetime import datetime
-import pytest
+from unittest.mock import patch
+import pytest  # pylint: disable=import-error
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import main
+import main  # pylint: disable=import-error,wrong-import-position
 
 
-class TestWorkoutData:
+class TestWorkoutData:  # pylint: disable=too-few-public-methods
     """Test workout data structures and constants."""
 
     def test_workout_groups_exist(self):
@@ -291,7 +290,7 @@ class TestWorkoutFlow:
         assert any("completed" in str(call).lower() for call in printed_output)
 
 
-class TestVideoFunctionality:
+class TestVideoFunctionality:  # pylint: disable=too-few-public-methods
     """Test video playback functionality."""
 
     @patch("subprocess.call")
