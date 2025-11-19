@@ -1,4 +1,5 @@
 """Initialize PyPI Package"""
+
 # pylint: disable=invalid-name, import-error
 
 try:
