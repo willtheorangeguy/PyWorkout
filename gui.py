@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-#pylint: disable=unused-variable, global-statement, invalid-name, too-many-branches, too-many-statements
+# pylint: disable=unused-variable, global-statement, invalid-name, too-many-branches, too-many-statements
 
 import tkinter.messagebox as box
 from tkinter import Tk, Label, Radiobutton, StringVar, Frame, TOP, HORIZONTAL
