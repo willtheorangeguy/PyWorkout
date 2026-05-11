@@ -1,6 +1,6 @@
 # Project Requirements
 
 # Testing dependencies
-pytest>=7.4.0
+pytest>=8.4.2
 pytest-cov>=7.1.0
 pytest-mock>=3.11.0
