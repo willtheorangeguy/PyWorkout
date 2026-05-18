@@ -14,12 +14,12 @@ license = { file="LICENSE.md" }
 requires-python = ">=3.9"
 classifiers = [
     'Development Status :: 5 - Production/Stable',
-    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'License :: OSI Approved :: MIT License',
     'Natural Language :: English',
     'Operating System :: OS Independent',
     'Topic :: Other/Nonlisted Topic',
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Dog-Face-Development/PyWorkout"
-"Bug Tracker" = "https://github.com/Dog-Face-Development/PyWorkout/issues"
+"Homepage" = "https://github.com/willtheorangeguy/PyWorkout"
+"Bug Tracker" = "https://github.com/willtheorangeguy/PyWorkout/issues"

@@ -1,6 +1,6 @@
 <!-- Logo -->
 <h1 align="center">
-  <img src="https://github.com/Dog-Face-Development/PyWorkout/blob/main/docs/images/logo.png" height="250px" width="400px" alt="PyWorkout">
+  <img src="https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/logo.png" height="250px" width="400px" alt="PyWorkout">
   <br>
   PyWorkout
   <br>
@@ -12,25 +12,25 @@
 <!-- Badges -->
 <div align="center">
   <!-- Stability -->
-  <img alt="Docker Build State" src="https://github.com/Dog-Face-Development/PyWorkout/actions/workflows/docker-publish.yml/badge.svg">
+  <img alt="Docker Build State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/docker-publish.yml/badge.svg">
   <!-- Stability -->
-  <img alt="PyPI Build State" src="https://github.com/Dog-Face-Development/PyWorkout/actions/workflows/push-to-pypi.yml/badge.svg">
+  <img alt="PyPI Build State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/push-to-pypi.yml/badge.svg">
   <!-- Stability -->
-  <img alt="Pylint State" src="https://github.com/Dog-Face-Development/PyWorkout/actions/workflows/pylint.yml/badge.svg">
+  <img alt="Pylint State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/pylint.yml/badge.svg">
   <!-- CodeQL -->
-  <img alt="CodeQL State" src="https://github.com/Dog-Face-Development/PyWorkout/actions/workflows/codeql-analysis.yml/badge.svg">
+  <img alt="CodeQL State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/codeql-analysis.yml/badge.svg">
   <!-- Version -->
-  <img alt="GitHub Version" src="https://img.shields.io/github/v/release/Dog-Face-Development/PyWorkout?include_prereleases">
+  <img alt="GitHub Version" src="https://img.shields.io/github/v/release/willtheorangeguy/PyWorkout?include_prereleases">
   <!-- Issues -->
-  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/Dog-Face-Development/PyWorkout">
+  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/willtheorangeguy/PyWorkout">
   <!-- Pull Requests -->
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/Dog-Face-Development/PyWorkout">
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/willtheorangeguy/PyWorkout">
   <!-- Discord -->
   <img alt="Discord Server ID" src="https://img.shields.io/discord/947657440579711016">
   <!-- Downloads -->
-  <img alt="Downloads" src="https://img.shields.io/github/downloads/Dog-Face-Development/PyWorkout/total">
+  <img alt="Downloads" src="https://img.shields.io/github/downloads/willtheorangeguy/PyWorkout/total">
   <!-- Language Count -->
-  <img alt="GitHub Languages" src="https://img.shields.io/github/languages/count/Dog-Face-Development/PyWorkout">
+  <img alt="GitHub Languages" src="https://img.shields.io/github/languages/count/willtheorangeguy/PyWorkout">
 </div>
 
 <!-- Navigation -->
@@ -45,7 +45,7 @@
 </p>
 
 <!-- Screenshot(s) -->
-![screenshot](https://github.com/Dog-Face-Development/PyWorkout/blob/main/docs/images/welcome.png)
+![screenshot](https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/welcome.png)
 
 ## Key Features
 
@@ -61,13 +61,13 @@
 
 ## Download
 
-You can **[download](https://github.com/Dog-Face-Development/PyWorkout/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
+You can **[download](https://github.com/willtheorangeguy/PyWorkout/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
 
-You can **[download](https://github.com/Dog-Face-Development/PyWorkout/releases/latest) the latest executable version** of PyWorkout for Windows. **This does not require Python.**
+You can **[download](https://github.com/willtheorangeguy/PyWorkout/releases/latest) the latest executable version** of PyWorkout for Windows. **This does not require Python.**
 
 ## How To Use
 
-To run the application, you can use [Git and the Python Interpreter](https://github.com/Dog-Face-Development/PyWorkout/main/README.md#git), which allows you to clone and run the application, [`pip`](https://github.com/Dog-Face-Development/PyWorkout/main/README.md#pip) to create a command line application, or [Docker](https://github.com/Dog-Face-Development/PyWorkout/main/README.md#docker) to create a container of the application.
+To run the application, you can use [Git and the Python Interpreter](https://github.com/willtheorangeguy/PyWorkout/main/README.md#git), which allows you to clone and run the application, [`pip`](https://github.com/willtheorangeguy/PyWorkout/main/README.md#pip) to create a command line application, or [Docker](https://github.com/willtheorangeguy/PyWorkout/main/README.md#docker) to create a container of the application.
 
 ### Git
 
@@ -75,7 +75,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com/downloa
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Dog-Face-Development/PyWorkout
+$ git clone https://github.com/willtheorangeguy/PyWorkout
 
 # Go into the repository
 $ cd PyWorkout
@@ -102,10 +102,10 @@ You can pull the [Docker](https://www.docker.com/) image from GitHub Packages. F
 
 ```bash
 # Pull image
-$ docker pull ghcr.io/dog-face-development/pyworkout:main
+$ docker pull ghcr.io/willtheorangeguy/pyworkout:main
 
 # Run container
-$ docker run -i -t ghcr.io/dog-face-development/pyworkout:main python main.py
+$ docker run -i -t ghcr.io/willtheorangeguy/pyworkout:main python main.py
 ```
 
 ## Support
@@ -139,13 +139,13 @@ abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4" # change thes
 
 3. Running the `video` command will now include your local workout videos.
 
-Customizing the list of workouts, workout activities and number of activities can be found in [`CUSTOMIZATION.md`](https://github.com/Dog-Face-Development/PyWorkout/tree/main/docs). More documentation is available in the **[Documentation](https://github.com/Dog-Face-Development/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/Dog-Face-Development/PyWorkout/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/Dog-Face-Development/PyWorkout/discussions/new)** or join our **[Discord](https://discord.gg/YFMcACG9rh)**.
+Customizing the list of workouts, workout activities and number of activities can be found in [`CUSTOMIZATION.md`](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs). More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/PyWorkout/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/willtheorangeguy/PyWorkout/discussions/new)** or join our **[Discord](https://discord.gg/YFMcACG9rh)**.
 
 ## Contributing
 
-Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/Dog-Face-Development/PyWorkout/compare).
+Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/willtheorangeguy/PyWorkout/compare).
 
-Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us (including how to sign our CLA).
+Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
 
 ## Changelog
 
@@ -183,10 +183,10 @@ This software uses the following open source packages, projects, services or web
 
 ## You may also like...
 
-* [ProgramVer](https://github.com/Dog-Face-Development/ProgramVer) - An open-source, Python GUI version window to show copyright info and licenses.
-* [Periodic Table Info](https://github.com/Dog-Face-Development/Periodic-Table-Info) - Print all the elements in the Periodic Table of the Elements, with an interactive prompt to learn more.
-* [PyAvatar](https://github.com/Dog-Face-Development/PyAvatar) - Easily display all of your creative avatars to keep them consistent across websites.
+* [ProgramVer](https://github.com/willtheorangeguy/ProgramVer) - An open-source, Python GUI version window to show copyright info and licenses.
+* [Periodic Table Info](https://github.com/willtheorangeguy/Periodic-Table-Info) - Print all the elements in the Periodic Table of the Elements, with an interactive prompt to learn more.
+* [PyAvatar](https://github.com/willtheorangeguy/PyAvatar) - Easily display all of your creative avatars to keep them consistent across websites.
 
 ## License
 
-This project is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) - see the [`LICENSE`](LICENSE.md) file for details. See the [Privacy Policy](https://github.com/Dog-Face-Development/PyWorkout/blob/master/docs/legal/PRIVACY.md), [Terms and Conditions](https://github.com/Dog-Face-Development/PyWorkout/blob/master/docs/legal/TERMS.md), and [EULA](https://github.com/Dog-Face-Development/PyWorkout/blob/master/docs/legal/EULA.md) for legal information.
+This project is licensed under the [MIT License](https://mit-license.org/) - see the [`LICENSE`](LICENSE.md) file for details.
