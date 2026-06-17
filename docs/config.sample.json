@@ -1,0 +1,18 @@
+{
+  "abs": {
+    "video": "/home/you/Videos/10 Minute Ab Workout.mp4"
+  },
+  "quads": {
+    "video": "https://www.youtube.com/watch?v=your-leg-workout"
+  },
+  "chest": {
+    "exercises": [
+      ["Pushups", 30],
+      ["Chest Expansions", 25],
+      ["Chest Squeezes", 25],
+      ["Pike Pushups", 25],
+      ["Shoulder Taps", 25],
+      ["Wide Pushups", 20]
+    ]
+  }
+}

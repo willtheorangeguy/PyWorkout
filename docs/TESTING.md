@@ -1,14 +1,17 @@
 # PyWorkout Test Suite
 
-This directory contains the comprehensive test suite for PyWorkout. The tests are written using pytest and provide coverage for the main CLI functionality and GUI components.
+This directory contains the comprehensive test suite for PyWorkout. The tests are written using pytest and provide coverage for the CLI, the workout REPL, and the config/history modules.
 
 ## Test Structure
 
 ```
 tests/
 ├── __init__.py          # Package initialization
-├── test_main.py         # Tests for main.py (CLI functionality)
-└── test_gui.py          # Tests for gui.py (GUI components)
+├── conftest.py          # Shared fixtures (isolates ~/.pyworkout in a tmp dir)
+├── test_main.py         # Tests for main.py (workout REPL + bug regressions)
+├── test_cli.py          # Tests for cli.py (argparse flags)
+├── test_config.py       # Tests for config.py (load/merge/init user config)
+└── test_history.py      # Tests for history.py (persistence)
 ```
 
 ## Test Coverage
@@ -50,11 +53,29 @@ The test suite includes the following test categories:
    - Complete workout scenarios
    - Multiple muscle groups
 
-### GUI Module Tests (`test_gui.py`)
+8. **TestBugRegressions** - Regression tests for fixed bugs
+   - Triceps `list` shows triceps (not glutes)
+   - Percentage uses the correct `*100` formula
+   - Five-exercise groups reach their last exercise
+   - `stats` works after `skip`
 
-1. **TestGUIImports** - Tests GUI imports
-2. **TestPercentageFunction** - Tests percentage calculations
-3. **TestGUIComponents** - Tests GUI components
+### CLI Tests (`test_cli.py`)
+
+- Argument parsing for every flag (`--group`, `--list`, `--history`,
+  `--init-config`, `--config`, `--version`)
+- Dispatch: no-args launches the REPL; flags run their action and exit
+
+### Config Tests (`test_config.py`)
+
+- Defaults load when no file exists
+- Deep-merge applies partial overrides
+- Malformed / non-object JSON falls back to defaults
+
+### History Tests (`test_history.py`)
+
+- `record_workout` appends and round-trips
+- `format_history` summarises sessions
+- Corrupt history files are treated as empty
 
 ## Running Tests
 
@@ -87,10 +108,10 @@ Run main module tests:
 pytest tests/test_main.py -v
 ```
 
-Run GUI tests:
+Run a single module's tests (e.g. config):
 
 ```bash
-pytest tests/test_gui.py -v
+pytest tests/test_config.py -v
 ```
 
 ### Running Specific Test Classes
@@ -198,10 +219,6 @@ def test_abs_selection(mock_input, mock_print):
 
 ## Troubleshooting
 
-### GUI Tests Skipped
-
-GUI tests may be skipped in headless environments (CI/CD). This is expected behavior as tkinter requires a display.
-
 ### Import Errors
 
 If you encounter import errors, ensure you're running tests from the project root:
@@ -221,10 +238,9 @@ pip install pytest-cov
 
 ## Test Results
 
-Current test coverage: ~54% overall
-- Main module: ~51% coverage
-- Test suite: 25 tests passing
-- GUI tests: 5 tests (may skip in headless environments)
+Current test coverage: ~78% overall (excluding the standalone, untested `gui.py`)
+- Test suite: 53 tests passing across CLI, REPL, config, and history
+- `gui.py` is an unfinished standalone prototype and is intentionally not tested
 
 ## Contributing
 

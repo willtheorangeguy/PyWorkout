@@ -54,9 +54,11 @@
 * Automatic workout selection by day.
 * Time and percentage complete indicators.
 * Step by step guide through a workout program.
-* Statistics view.
+* Statistics view (now works alongside `skip`).
+* Workout history saved between sessions.
+* Command-line flags for scriptable, non-interactive use.
 * Can skip unlikeable workouts.
-* Able to customize number of workouts, muscle groups, type of workout and more.
+* Customize workouts, muscle groups, reps, and videos via a JSON config — no code editing.
 * Cross platform.
 
 ## Download
@@ -118,28 +120,37 @@ start   Starts the workout and displays the first workout activity.
 next    Moves to the next workout activity.
 skip    Skips the current workout activity.
 end     Completes the workout and display full workout statistics.
-stats   Shows workout statistics at any point (does not work with the `skip` command).
+stats   Shows workout statistics at any point.
 video   Opens the workout video assigned to each muscle group.
+history Shows your past completed workouts.
 license Shows the license.
 help    Prints this help text.
 quit    Ends the program.
 ```
 
-Note: the `skip` command cannot be used in conjunction with the `stats` command.
+### Command-line flags
 
-**To use the `video` command, you must change the video variables.** To do so:
+PyWorkout can also be driven non-interactively:
 
-1. Open `main.py` in a text editor.
-2. Change the _Video File Paths_ variables to the **absolute** path for each video by muscle group (double slashes (`\\`) are only necessary on Windows).
-
-```python
-# Video File Paths
-abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4" # change these to personal video path
+```text
+pyworkout                     Launch the interactive workout REPL.
+pyworkout -g abs              Preselect the "abs" group and skip the prompt.
+pyworkout --list             List every group's exercises and exit.
+pyworkout --list abs         List one group's exercises and exit.
+pyworkout --history          Print past workouts and exit.
+pyworkout --init-config      Write a default config file you can edit.
+pyworkout --config PATH      Use an alternate config file.
+pyworkout --version          Print the version.
 ```
 
-3. Running the `video` command will now include your local workout videos.
+**To use the `video` command, set your video paths in the config file.** To do so:
 
-Customizing the list of workouts, workout activities and number of activities can be found in [`CUSTOMIZATION.md`](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs). More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/PyWorkout/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/willtheorangeguy/PyWorkout/discussions/new)** or join our **[Discord](https://discord.gg/YFMcACG9rh)**.
+1. Run `pyworkout --init-config` to create `~/.pyworkout/config.json`.
+2. Set the `"video"` field for each muscle group to a local **absolute** path or a
+   web/YouTube URL (on Windows, escape backslashes in JSON: `"C:\\Videos\\abs.mp4"`).
+3. Running the `video` command will now open your chosen workout video.
+
+Customizing workouts, activities, reps, and videos is covered in [`CUSTOMIZATION.md`](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs). Completed workouts are saved to `~/.pyworkout/history.json` and viewable with the `history` command or `--history` flag. More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/PyWorkout/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/willtheorangeguy/PyWorkout/discussions/new)** or join our **[Discord](https://discord.gg/YFMcACG9rh)**.
 
 ## Contributing
 

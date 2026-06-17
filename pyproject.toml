@@ -4,7 +4,7 @@ requires = ["setuptools", "wheel"]
 
 [project]
 name = "PyWorkout"
-version = "1.2.0"
+version = "1.3.0"
 authors = [
   { name= "willtheorangeguy" },
 ]
@@ -12,6 +12,7 @@ description = "A minimal CLI to keep you inspired during your workout!"
 readme = "README.md"
 license = { file="LICENSE.md" }
 requires-python = ">=3.9"
+keywords = ["workout", "plan", "tracking", "tracker", "video", "cli"]
 classifiers = [
     'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: MIT License',
@@ -20,6 +21,12 @@ classifiers = [
     'Topic :: Other/Nonlisted Topic',
 ]
 
+[project.scripts]
+pyworkout = "cli:main"
+
 [project.urls]
 "Homepage" = "https://github.com/willtheorangeguy/PyWorkout"
 "Bug Tracker" = "https://github.com/willtheorangeguy/PyWorkout/issues"
+
+[tool.setuptools]
+py-modules = ["main", "cli", "config", "data", "history", "gui"]

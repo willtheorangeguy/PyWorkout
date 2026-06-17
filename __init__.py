@@ -4,7 +4,9 @@
 
 try:
     from main import workout
+    from cli import main
 except ImportError:
     from .main import workout
+    from .cli import main
 
-__all__ = ["workout"]
+__all__ = ["workout", "main"]
