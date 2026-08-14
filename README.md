@@ -1,192 +1,100 @@
 <!-- Logo -->
 <h1 align="center">
-  <img src="https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/logo.png" height="250px" width="400px" alt="PyWorkout">
+  <img src="https://raw.githubusercontent.com/willtheorangeguy/.github/main/icons/PyWorkout/logo.png" height="250px" width="400px" alt="PyWorkout">
   <br>
   PyWorkout
   <br>
 </h1>
 
 <!-- Copy -->
-<h4 align="center">A minimal CLI to keep you inspired during your workout!</h4>
+<h4 align="center">A minimal CLI to keep you inspired during your workout.</h4>
 
 <!-- Badges -->
 <div align="center">
-  <!-- Stability -->
-  <img alt="Docker Build State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/docker-publish.yml/badge.svg">
-  <!-- Stability -->
-  <img alt="PyPI Build State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/push-to-pypi.yml/badge.svg">
-  <!-- Stability -->
-  <img alt="Pylint State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/pylint.yml/badge.svg">
-  <!-- CodeQL -->
-  <img alt="CodeQL State" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/codeql-analysis.yml/badge.svg">
-  <!-- Version -->
-  <img alt="GitHub Version" src="https://img.shields.io/github/v/release/willtheorangeguy/PyWorkout?include_prereleases">
-  <!-- Issues -->
-  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/willtheorangeguy/PyWorkout">
-  <!-- Pull Requests -->
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/willtheorangeguy/PyWorkout">
-  <!-- Discord -->
-  <img alt="Discord Server ID" src="https://img.shields.io/discord/947657440579711016">
-  <!-- Downloads -->
-  <img alt="Downloads" src="https://img.shields.io/github/downloads/willtheorangeguy/PyWorkout/total">
-  <!-- Language Count -->
-  <img alt="GitHub Languages" src="https://img.shields.io/github/languages/count/willtheorangeguy/PyWorkout">
+  <img alt="Tests" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/tests.yml/badge.svg">
+  <img alt="Pylint" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/pylint.yml/badge.svg">
+  <img alt="Docker Build" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/docker-publish.yml/badge.svg">
+  <img alt="PyPI Build" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/push-to-pypi.yml/badge.svg">
+  <img alt="CodeQL" src="https://github.com/willtheorangeguy/PyWorkout/actions/workflows/codeql-analysis.yml/badge.svg">
+  <img alt="Version" src="https://img.shields.io/github/v/release/willtheorangeguy/PyWorkout?include_prereleases">
+  <img alt="Issues" src="https://img.shields.io/github/issues/willtheorangeguy/PyWorkout">
+  <img alt="Pull Requests" src="https://img.shields.io/github/issues-pr/willtheorangeguy/PyWorkout">
+  <img alt="License" src="https://img.shields.io/github/license/willtheorangeguy/PyWorkout">
 </div>
 
 <!-- Navigation -->
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#download">Download</a> •
-  <a href="#how-to-use">How To Use</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#documentation">Documentation</a> •
   <a href="#support">Support</a> •
   <a href="#contributing">Contributing</a> •
-  <a href="#changelog">Changelog</a> •
-  <a href="#credits">Credits & Contributors</a>
+  <a href="#license">License</a>
 </p>
 
-<!-- Screenshot(s) -->
-![screenshot](https://github.com/willtheorangeguy/PyWorkout/blob/main/docs/images/welcome.png)
+<!-- Hero -->
+
+![PyWorkout running in a terminal](https://raw.githubusercontent.com/willtheorangeguy/.github/main/icons/PyWorkout/welcome.png)
 
 ## Key Features
 
-* Easy to run and understand with simple commands.
-* Large list of muscle groups and workout activities.
-* Automatic workout selection by day.
-* Time and percentage complete indicators.
-* Step by step guide through a workout program.
-* Statistics view.
-* Can skip unlikeable workouts.
-* Able to customize number of workouts, muscle groups, type of workout and more.
-* Cross platform.
+* Pick a muscle group and get walked through the workout one exercise at a time.
+* Nine muscle groups covering the whole body, each with its own set and rep counts.
+* Live elapsed time and percent complete after every exercise.
+* Skip anything you would rather not do, and see full statistics at the end.
+* Open a local video for the current muscle group with one command.
+* Add exercises, change rep counts, and swap videos by editing plain Python lists.
+* No runtime dependencies beyond the standard library. Runs on Windows, macOS, and Linux.
 
-## Download
-
-You can **[download](https://github.com/willtheorangeguy/PyWorkout/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
-
-You can **[download](https://github.com/willtheorangeguy/PyWorkout/releases/latest) the latest executable version** of PyWorkout for Windows. **This does not require Python.**
-
-## How To Use
-
-To run the application, you can use [Git and the Python Interpreter](https://github.com/willtheorangeguy/PyWorkout/main/README.md#git), which allows you to clone and run the application, [`pip`](https://github.com/willtheorangeguy/PyWorkout/main/README.md#pip) to create a command line application, or [Docker](https://github.com/willtheorangeguy/PyWorkout/main/README.md#docker) to create a container of the application.
-
-### Git
-
-To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Python](https://www.python.org/downloads/) installed on your computer. If you would rather not use Git, you can just download the script from GitHub above. From your command line:
+## Installation
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/willtheorangeguy/PyWorkout
-
-# Go into the repository
-$ cd PyWorkout
-
-# Run the CLI
-$ python main.py
+pip install pyworkout
 ```
 
-### `pip`
+Prefer a standalone Windows executable, the source, or a container? See [Installation](docs/installation.md).
 
-You can install the program from the [Python Package Index](https://pypi.org/project/PyWorkout/) through `pip`.
+## Usage
 
-```bash
-# Install via pip
-$ pip install pyworkout
+Start the CLI, choose a muscle group, then step through the workout:
 
-# Run the CLI
+```console
 $ pyworkout
+Which muscle group would you like to work out? abs
+
+> start
+You have started the abs muscle group.
+The current time is: 14:19:35
+You have completed: 0%
+Please complete 2 Sets of 25 Reps of Situps
+
+> next
+You have completed: 16%
+Please complete 2 Sets of 25 Reps of Reverse Crunches
+
+> end
 ```
 
-### Docker
+`help` lists every command. The full reference is in [Commands](docs/commands.md).
 
-You can pull the [Docker](https://www.docker.com/) image from GitHub Packages. From your command line:
+## Documentation
 
-```bash
-# Pull image
-$ docker pull ghcr.io/willtheorangeguy/pyworkout:main
-
-# Run container
-$ docker run -i -t ghcr.io/willtheorangeguy/pyworkout:main python main.py
-```
+Full documentation lives in [`docs/`](docs/README.md):
+[Installation](docs/installation.md) · [Usage](docs/usage.md) · [Commands](docs/commands.md) · [Configuration](docs/configuration.md) · [Development](docs/development.md) · [Testing](docs/testing.md)
 
 ## Support
 
-**The following commands are available (can be generated by using the `help` command):**
-
-```text
-list    Lists the workout activities by muscle group.
-start   Starts the workout and displays the first workout activity.
-next    Moves to the next workout activity.
-skip    Skips the current workout activity.
-end     Completes the workout and display full workout statistics.
-stats   Shows workout statistics at any point (does not work with the `skip` command).
-video   Opens the workout video assigned to each muscle group.
-license Shows the license.
-help    Prints this help text.
-quit    Ends the program.
-```
-
-Note: the `skip` command cannot be used in conjunction with the `stats` command.
-
-**To use the `video` command, you must change the video variables.** To do so:
-
-1. Open `main.py` in a text editor.
-2. Change the _Video File Paths_ variables to the **absolute** path for each video by muscle group (double slashes (`\\`) are only necessary on Windows).
-
-```python
-# Video File Paths
-abs_video = "D:\\Videos\\Workout Videos\\10 Minute Ab Workout.mp4" # change these to personal video path
-```
-
-3. Running the `video` command will now include your local workout videos.
-
-Customizing the list of workouts, workout activities and number of activities can be found in [`CUSTOMIZATION.md`](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs). More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/PyWorkout/tree/main/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/PyWorkout/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/willtheorangeguy/PyWorkout/discussions/new)** or join our **[Discord](https://discord.gg/YFMcACG9rh)**.
+Open a [GitHub Discussion](https://github.com/willtheorangeguy/PyWorkout/discussions/new) or file an [issue](https://github.com/willtheorangeguy/PyWorkout/issues/new/choose).
 
 ## Contributing
 
-Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/willtheorangeguy/PyWorkout/compare).
-
-Please read [`CONTRIBUTING`](https://github.com/willtheorangeguy/.github/blob/main/CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](https://github.com/willtheorangeguy/.github/blob/main/CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
-
-## Changelog
-
-See the [`CHANGELOG`](CHANGELOG.md) file for details.
+Contributions welcome. See the org-wide [Contributing Guide](https://github.com/willtheorangeguy/.github/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/willtheorangeguy/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## Credits
 
-This software uses the following open source packages, projects, services or websites:
-
-<!-- Credits Table -->
-<table>
-  <tr>
-    <th align="center"><img src="https://applets.imgix.net/https%3A%2F%2Fassets.ifttt.com%2Fimages%2Fchannels%2F2107379463%2Ficons%2Fmonochrome_large.png?w=240&h=240&s=8a19bbc158996d098e2fb18310ba7f33" width="150" height="150" alt="GitHub"/></th>
-    <th align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/182px-Python-logo-notext.svg.png" width="150" height="150" alt="PSF"/></th>
-    <th align="center"><img src="https://pyinstaller.readthedocs.io/en/v4.2/_static/pyinstaller-draft1a.ico" width="150" height="150" alt="PyInstaller"/></th>
-    <th align="center"><img src="https://pbs.twimg.com/profile_images/912151274551885824/sjzD5vK9_400x400.jpg" width="150" height="150" alt="Carbon"/></th>
-  </tr>
-  <tr>
-    <td align="center">GitHub</td>
-    <td align="center">Python Software Foundation</td>
-    <td align="center">PyInstaller</td>
-    <td align="center">Carbon</td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/">Web</a> - <a href="https://github.com/pricing">Plans</a></td>
-    <td align="center"><a href="https://www.python.org/">Web</a> - <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&id=2">Donate</a></td>
-    <td align="center"><a href="https://pyinstaller.readthedocs.io/en/stable/">Web</a> - <a href="https://www.pyinstaller.org/funding.html#funding-by-individuals">Donate</a></td>
-    <td align="center"><a href="https://carbon.now.sh/">Web</a></td>
-  </tr>
-</table>
-
-## Contributors
-
-* [@willtheorangeguy](https://github.com/willtheorangeguy) - Sponsor on [PayPal](https://paypal.me/wvdg44?country.x=CA&locale.x=en_US)
-
-## You may also like...
-
-* [ProgramVer](https://github.com/willtheorangeguy/ProgramVer) - An open-source, Python GUI version window to show copyright info and licenses.
-* [Periodic Table Info](https://github.com/willtheorangeguy/Periodic-Table-Info) - Print all the elements in the Periodic Table of the Elements, with an interactive prompt to learn more.
-* [PyAvatar](https://github.com/willtheorangeguy/PyAvatar) - Easily display all of your creative avatars to keep them consistent across websites.
+Built with [Python](https://www.python.org/), packaged with [PyInstaller](https://pyinstaller.org/), and distributed through [PyPI](https://pypi.org/project/PyWorkout/) and [GitHub Packages](https://github.com/willtheorangeguy/PyWorkout/pkgs/container/pyworkout).
 
 ## License
 
-This project is licensed under the [MIT License](https://mit-license.org/) - see the [`LICENSE`](LICENSE.md) file for details.
+MIT — see [`LICENSE.md`](LICENSE.md).
