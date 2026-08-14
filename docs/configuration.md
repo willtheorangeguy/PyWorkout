@@ -1,8 +1,8 @@
-# PyWorkout Customization
+# PyWorkout — Configuration
 
-PyWorkout has been designed to be heavily customizable. More workouts can be added, lengths can be changed, and videos can be used from different sources.
+PyWorkout keeps its workout data as plain Python lists in `main.py`, so changing it means editing that file directly — there is no config file or database.
 
-All of these instructions require [Python](https://www.python.org/downloads/) and [a text editor](https://code.visualstudio.com/) to be installed.
+You need [Python](https://www.python.org/downloads/) and [a text editor](https://code.visualstudio.com/), and you need to be running PyWorkout [from source](installation.md#from-source). Edits to `main.py` have no effect on a `pip`-installed copy or the Windows executable.
 
 ## Add a Workout
 
@@ -53,9 +53,9 @@ abs_count = [25, 25, 25, 25, 25, 2]
 
 ## Change the Videos
 
-Changing the video address is extremely easy as well!
+The `video` command opens a local video file for the current muscle group. The paths shipped in `main.py` point at one particular machine, so this command does nothing useful until you set your own.
 
-1. Choose your videos. I recommend workout videos by [Pamela Reif](https://www.youtube.com/channel/UChVRfsT_ASBZk10o0An7Ucg). They can be downloaded from the internet or created yourself.
+1. Choose your videos — recorded yourself, or downloaded. Workout videos by [Pamela Reif](https://www.youtube.com/@PamelaRf1) work well.
 2. Open the `main.py` file with a text editor.
 3. Navigate to the `# Video File Paths` section. It looks like this:
 
