@@ -1,6 +1,8 @@
-# PyWorkout Test Suite
+# PyWorkout — Testing
 
-This directory contains the comprehensive test suite for PyWorkout. The tests are written using pytest and provide coverage for the main CLI functionality and GUI components.
+PyWorkout's test suite lives in `tests/` and runs on [pytest](https://docs.pytest.org/). It covers the CLI in `main.py`; `gui.py` is an unfinished Tkinter frontend that is not wired into the application, so its tests skip in most environments.
+
+For local setup, linting, and building, see [Development](development.md).
 
 ## Test Structure
 

@@ -1,6 +1,6 @@
-# PyWorkout Commands
+# PyWorkout — Commands
 
-**The following commands are available in PyWorkout:**
+Every command available at the PyWorkout prompt. `help` prints this same list inside the program.
 
 ```text
 list    Lists the workout activities by muscle group.
@@ -100,7 +100,7 @@ The current time is: 14:33:04. 0:00:01.564038 has elapsed.
 
 ## `license`
 
-Shows the GNU GPL v3 license text. The full license can be accessed in the `LICENSE.md` file.
+Prints the copyright line and a short warranty disclaimer. The full terms are in [`LICENSE.md`](../LICENSE.md).
 
 ## `help`
 
