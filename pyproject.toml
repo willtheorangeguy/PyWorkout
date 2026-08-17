@@ -23,3 +23,6 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/willtheorangeguy/PyWorkout"
 "Bug Tracker" = "https://github.com/willtheorangeguy/PyWorkout/issues"
+[tool.bandit]
+exclude_dirs = ["tests", "test", ".venv", "venv", "build", "node_modules"]
+skips = ["B101"]

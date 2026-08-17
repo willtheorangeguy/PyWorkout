@@ -6,7 +6,9 @@ Copyright (C) 2021-2026  @willtheorangeguy
 # pylint: disable=redefined-builtin, global-variable-undefined, too-many-locals, too-many-branches, too-many-statements
 
 import os
-import subprocess
+import shutil
+import subprocess  # nosec B404 - only used to hand a local file path to the
+                   # desktop opener, with a resolved path and a list argv.
 import sys
 import time
 from datetime import datetime
@@ -96,10 +98,18 @@ def workout():
     # Video Function
     def video(path):
         if sys.platform == "win32":
-            os.startfile(path)
+            # Hands a hardcoded local video path to the Windows shell
+            # association; no command string is ever built or interpreted.
+            os.startfile(path)  # nosec B606
         else:
+            # Resolve the opener to an absolute path rather than trusting PATH
+            # order, and pass a list argv so the path is never shell-interpreted.
             opener = "open" if sys.platform == "darwin" else "xdg-open"
-            subprocess.call([opener, path])
+            opener_path = shutil.which(opener)
+            if opener_path is None:
+                print(f"Could not find '{opener}' to open the video: {path}")
+                return
+            subprocess.call([opener_path, path])  # nosec B603
 
     # Welcome
     print("         WELCOME TO PyWORKOUT")
