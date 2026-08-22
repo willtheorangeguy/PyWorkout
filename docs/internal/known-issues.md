@@ -7,12 +7,11 @@ licensing decision rather than a documentation one.
 Ordered by severity. See [`docs/roadmap.md`](../roadmap.md) for the narrative version,
 which also covers deliberate non-goals.
 
-
 **4 open:** 2 medium, 2 low.
 
 ## 1. Startup banner claims GPL terms on an MIT project
 
-**Severity:** Medium  
+**Severity:** Medium
 **Where:** `main.py`
 
 **What:** The program prints GPL boilerplate at startup — "ABSOLUTELY NO WARRANTY", "free software", "redistribute it under certain conditions" — with a 2021-2024 copyright line. The repository is MIT and `LICENSE.md` is the MIT text.
@@ -23,7 +22,7 @@ which also covers deliberate non-goals.
 
 ## 2. `skip` and `stats` are mutually exclusive
 
-**Severity:** Medium  
+**Severity:** Medium
 **Where:** `main.py`, around lines 484-561
 
 **What:** Using `skip` disables `stats` for the rest of the session; the program prints "You cannot use both the `skip` and `stats` commands, sorry!"
@@ -34,7 +33,7 @@ which also covers deliberate non-goals.
 
 ## 3. Help text is printed twice and the copies have drifted
 
-**Severity:** Low  
+**Severity:** Low
 **Where:** `main.py`, around lines 613 and 632
 
 **What:** Help is printed inline in two places. One documents the `skip`/`stats` limitation; the other omits it.
@@ -45,7 +44,7 @@ which also covers deliberate non-goals.
 
 ## 4. The `video` command needs source edits to do anything
 
-**Severity:** Low  
+**Severity:** Low
 **Where:** `main.py`, under the `# Video File Paths` comment
 
 **What:** Video paths are literals in the source and point nowhere useful by default.
@@ -53,7 +52,6 @@ which also covers deliberate non-goals.
 **Why it matters:** A command that does nothing until you modify the program is closer to unimplemented than to configurable.
 
 **Suggested fix:** Move paths into a config file, or make the command report that none are set.
-
 
 ---
 

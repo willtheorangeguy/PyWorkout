@@ -3,7 +3,7 @@
 A terminal workout tracker: pick a muscle group, work through its exercises, and get timing
 and completion statistics as you go. Ships to PyPI, GHCR, and as a Windows executable.
 
-```
+```text
 PyWorkout/
 ├── docs/
 │   ├── README.md          this page

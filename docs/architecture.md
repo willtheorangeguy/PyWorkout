@@ -2,7 +2,7 @@
 
 ## Layout
 
-```
+```text
 PyWorkout/
 ├── main.py             the CLI — command loop, workout data, all session state
 ├── gui.py              a separate Tkinter percentage tracker

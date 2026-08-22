@@ -9,7 +9,7 @@ This is a defect rather than a design decision — both commands manipulate the 
 bookkeeping inside one large function. See [Architecture](./architecture.md) and
 [Roadmap](./roadmap.md).
 
-## The `video` command does nothing.
+## The `video` command does nothing
 
 It needs paths configured first. Video file paths are literals in `main.py`, under the
 `# Video File Paths` comment — the command opens whatever is listed there in your default

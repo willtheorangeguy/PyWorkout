@@ -100,7 +100,7 @@ The current time is: 14:33:04. 0:00:01.564038 has elapsed.
 
 ## `license`
 
-Prints the copyright line and a short warranty disclaimer. The full terms are in [`LICENSE.md`](../LICENSE.md).
+Prints the copyright line and a short warranty disclaimer. The full terms are in [`LICENSE.md`](license.md).
 
 ## `help`
 

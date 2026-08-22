@@ -19,7 +19,7 @@ pyworkout
 
 You are prompted for one. Both the number and the name work:
 
-```
+```text
 1  abs        4  chest      7  back
 2  quads      5  arms
 3  glutes     6  shoulders
@@ -27,7 +27,7 @@ You are prompted for one. Both the number and the name work:
 
 ## Work through it
 
-```
+```text
 list    show the exercises in this group
 start   begin, and start the timer
 next    move to the next exercise
@@ -41,7 +41,7 @@ A typical session is `start`, then `next` repeatedly, then `end`.
 
 ## What to expect
 
-```
+```text
 You have started the abs muscle group.
 The current time is: 14:19:35
 You have completed: 0%
