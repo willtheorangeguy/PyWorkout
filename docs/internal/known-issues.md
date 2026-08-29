@@ -7,7 +7,9 @@ licensing decision rather than a documentation one.
 Ordered by severity. See [`docs/roadmap.md`](../roadmap.md) for the narrative version,
 which also covers deliberate non-goals.
 
-**4 open:** 2 medium, 2 low.
+**1 open, 3 resolved:** 1 medium open; 2 medium and 1 low resolved by the `cli.py` /
+`config.py` / `data.py` / `history.py` module split (ported from the
+`refactor-data-config-history-cli` branch).
 
 ## 1. Startup banner claims GPL terms on an MIT project
 
@@ -20,38 +22,36 @@ which also covers deliberate non-goals.
 
 **Suggested fix:** Replace the banner with the MIT notice, or drop it. `LICENSE.md` is authoritative either way.
 
-## 2. `skip` and `stats` are mutually exclusive
+**Status:** Still open. The `license`/`help` text ported from `refactor-data-config-history-cli` keeps the same GPL-style wording; this fix was out of scope for that refactor.
 
-**Severity:** Medium
-**Where:** `main.py`, around lines 484-561
+## 2. `skip` and `stats` are mutually exclusive — RESOLVED
 
-**What:** Using `skip` disables `stats` for the rest of the session; the program prints "You cannot use both the `skip` and `stats` commands, sorry!"
+**Severity:** Medium (was)
+**Where:** `main.py`, around lines 484-561 (pre-refactor)
 
-**Why it matters:** Both commands manipulate overlapping session bookkeeping inside a single ~600-line `workout()` function, so neither can be fixed without untangling that state.
+**What:** Using `skip` disabled `stats` for the rest of the session; the program printed "You cannot use both the `skip` and `stats` commands, sorry!"
 
-**Suggested fix:** Extract session state into its own model. That is also what would make the two help outputs collapse into one.
+**Resolution:** `main.py` now tracks presented activities as a list of `{name, ts, kind}` records instead of parallel lists with an index that `skip` could desync. `skip` pops the last presented record; `stats` reads the same list. The two commands no longer interfere.
 
-## 3. Help text is printed twice and the copies have drifted
+## 3. Help text is printed twice and the copies had drifted — RESOLVED
 
-**Severity:** Low
-**Where:** `main.py`, around lines 613 and 632
+**Severity:** Low (was)
+**Where:** `main.py`, around lines 613 and 632 (pre-refactor)
 
-**What:** Help is printed inline in two places. One documents the `skip`/`stats` limitation; the other omits it.
+**What:** Help was printed inline in two places. One documented the `skip`/`stats` limitation; the other omitted it.
 
-**Why it matters:** Which caveat a user sees depends on where they asked for help.
+**Resolution:** Since issue #2 is fixed, the `skip`/`stats` caveat no longer applies, so both copies (the `help` command and the unrecognised-command fallback) now agree. They are still two separate `print` blocks rather than a single source, so a future edit could redrift them — worth a follow-up if anyone touches that code again.
 
-**Suggested fix:** Single source the help text.
+## 4. The `video` command needs source edits to do anything — RESOLVED
 
-## 4. The `video` command needs source edits to do anything
+**Severity:** Low (was)
+**Where:** `main.py`, under the `# Video File Paths` comment (pre-refactor)
 
-**Severity:** Low
-**Where:** `main.py`, under the `# Video File Paths` comment
+**What:** Video paths were literals in the source and pointed nowhere useful by default.
 
-**What:** Video paths are literals in the source and point nowhere useful by default.
+**Resolution:** Video paths now live in `~/.pyworkout/config.json` (see `config.py`, `docs/config.sample.json`), written with `pyworkout --init-config`. The `video` command reports "No video configured" instead of silently doing nothing when a group has none set.
 
-**Why it matters:** A command that does nothing until you modify the program is closer to unimplemented than to configurable.
-
-**Suggested fix:** Move paths into a config file, or make the command report that none are set.
+**Documentation note:** `README.md` and `docs/usage.md`/`docs/commands.md`/`docs/configuration.md` still describe the pre-refactor model (video paths edited directly in `main.py`, exercises customized by "editing plain Python lists", nine muscle groups). Those pages predate this module split and were already drifted from the shipped code before it (see the top of this file); they still need a documentation pass to describe the `cli.py`/`config.py`/`data.py`/`history.py` structure, the new CLI flags, and the config file. Not attempted here to avoid guessing at the intended house style for that doc set.
 
 ---
 
