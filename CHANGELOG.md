@@ -1,5 +1,26 @@
 # Changelog
 
+## [v1.3.0](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v1.3.0)
+
+### Added
+
+- Workout history saved between sessions (`history` command and `--history` flag).
+- Command-line flags: `--group`, `--list`, `--history`, `--init-config`, `--config`, `--version`.
+- User config file (`~/.pyworkout/config.json`) for exercises, reps, and video paths — no code editing required.
+
+### Changed
+
+- Exercise data refactored into a single structure; the old parallel-list / if-elif layout is gone.
+- Video paths now come from config instead of being hardcoded.
+- Packaging consolidated into `pyproject.toml` (removed `setup.py`, trimmed `setup.cfg`).
+
+### Fixed
+
+- Triceps `list` showing glutes exercises.
+- `start` always reporting 0% progress.
+- Off-by-one bounds and a rep-count mismatch on five-exercise groups.
+- `stats` no longer breaks after `skip`.
+
 ## [v1.2.0](https://github.com/willtheorangeguy/PyWorkout/releases/tag/v1.2.0)
 
 ### Added

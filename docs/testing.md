@@ -1,10 +1,12 @@
-# PyWorkout Test Suite
+# PyWorkout — Testing
 
-This directory contains the comprehensive test suite for PyWorkout. The tests are written using pytest and provide coverage for the main CLI functionality and GUI components.
+PyWorkout's test suite lives in `tests/` and runs on [pytest](https://docs.pytest.org/). It covers the CLI in `main.py`; `gui.py` is an unfinished Tkinter frontend that is not wired into the application, so its tests skip in most environments.
+
+For local setup, linting, and building, see [Development](development.md).
 
 ## Test Structure
 
-```
+```text
 tests/
 ├── __init__.py          # Package initialization
 ├── test_main.py         # Tests for main.py (CLI functionality)
@@ -67,6 +69,7 @@ pip install -r requirements.txt
 ```
 
 This installs:
+
 - pytest
 - pytest-cov (coverage reporting)
 - pytest-mock (mocking support)
@@ -137,7 +140,7 @@ testpaths = tests
 python_files = test_*.py
 python_classes = Test*
 python_functions = test_*
-addopts = 
+addopts =
     -v
     --strict-markers
     --tb=short
@@ -151,10 +154,12 @@ addopts =
 ## Continuous Integration
 
 Tests are automatically run via GitHub Actions on:
+
 - Push to `main` and `develop` branches
 - Pull requests to `main` and `develop` branches
 
 The workflow tests against multiple Python versions:
+
 - Python 3.9
 - Python 3.10
 - Python 3.11
@@ -188,10 +193,10 @@ When adding new tests, follow these guidelines:
 def test_abs_selection(mock_input, mock_print):
     """Test selecting abs muscle group."""
     mock_input.side_effect = ['abs', 'quit']
-    
+
     with pytest.raises(SystemExit):
         main.workout()
-    
+
     printed_output = [str(call) for call in mock_print.call_args_list]
     assert any('Ab muscle group selected' in str(call) for call in printed_output)
 ```
@@ -222,6 +227,7 @@ pip install pytest-cov
 ## Test Results
 
 Current test coverage: ~54% overall
+
 - Main module: ~51% coverage
 - Test suite: 25 tests passing
 - GUI tests: 5 tests (may skip in headless environments)
@@ -229,6 +235,7 @@ Current test coverage: ~54% overall
 ## Contributing
 
 When contributing:
+
 1. Write tests for new features
 2. Ensure all tests pass before submitting PR
 3. Aim for >80% code coverage for new code

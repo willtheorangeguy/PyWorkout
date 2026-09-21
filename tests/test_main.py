@@ -297,22 +297,33 @@ class TestVideoFunctionality:  # pylint: disable=too-few-public-methods
     @patch("builtins.print")
     @patch("builtins.input")
     @patch("sys.platform", "linux")
-    def test_video_command_linux(self, mock_input, mock_print, mock_subprocess):
-        """Test video command on Linux platform."""
+    def test_video_command_linux(self, mock_input, _mock_print, mock_subprocess):
+        """Test video command on Linux opens the configured video path."""
+        mock_input.side_effect = ["1", "start", "video", "quit"]
+
+        # Video paths now come from config; inject one so the player is invoked.
+        workouts = main.config_mod.default_workouts()
+        workouts["abs"]["video"] = "/tmp/abs.mp4"
+        with patch.object(main.config_mod, "load_config", return_value=workouts):
+            with pytest.raises(SystemExit):
+                main.workout()
+
+        # On Linux, xdg-open should be invoked with the configured path.
+        assert mock_subprocess.called, "Video command should call subprocess"
+        called_args = mock_subprocess.call_args[0][0]
+        assert called_args == ["xdg-open", "/tmp/abs.mp4"]
+
+    @patch("builtins.print")
+    @patch("builtins.input")
+    def test_video_command_unconfigured(self, mock_input, mock_print):
+        """Test video command reports when no video path is configured."""
         mock_input.side_effect = ["1", "start", "video", "quit"]
 
         with pytest.raises(SystemExit):
             main.workout()
 
-        # On Linux, should attempt to call xdg-open
-        # Note: The actual call might fail due to invalid path, but we're testing the attempt
         printed_output = [str(call) for call in mock_print.call_args_list]
-        # Verify video command was processed - either video text printed or subprocess called
-        video_text_found = any("Video" in str(call) for call in printed_output)
-        subprocess_was_called = mock_subprocess.called
-        assert (
-            video_text_found or subprocess_was_called
-        ), "Video command should print text or call subprocess"
+        assert any("No video configured" in str(call) for call in printed_output)
 
 
 class TestWelcomeScreen:
@@ -387,6 +398,78 @@ class TestIntegration:
 
         printed_output = [str(call) for call in mock_print.call_args_list]
         assert any("Situps" in str(call) for call in printed_output)
+
+
+class TestBugRegressions:
+    """Regression tests for bugs fixed in the data refactor."""
+
+    @patch("builtins.print")
+    @patch("builtins.input")
+    def test_triceps_list_shows_triceps(self, mock_input, mock_print):
+        """`list` for triceps must show triceps exercises, not glutes."""
+        mock_input.side_effect = ["triceps", "list", "quit"]
+
+        with pytest.raises(SystemExit):
+            main.workout()
+
+        output = " ".join(str(c) for c in mock_print.call_args_list)
+        assert "Diamond Pushups" in output  # a triceps exercise
+        assert "Donkey Kicks" not in output  # a glutes exercise (old bug leaked these)
+
+    @patch("builtins.print")
+    @patch("builtins.input")
+    def test_percentage_progresses(self, mock_input, mock_print):
+        """Percent uses the correct *100 formula and increases past 0%."""
+        mock_input.side_effect = ["abs", "start", "next", "next", "quit"]
+
+        with pytest.raises(SystemExit):
+            main.workout()
+
+        output = " ".join(str(c) for c in mock_print.call_args_list)
+        # abs has 6 exercises; second `next` presents index 2 -> 33%.
+        assert "33%" in output
+
+    @patch("builtins.print")
+    @patch("builtins.input")
+    def test_five_item_group_last_exercise_reachable(self, mock_input, mock_print):
+        """Five-exercise groups (e.g. chest) reach their final exercise."""
+        # chest: Pushups, Chest Expansions, Chest Squeezes, Pike Pushups, Shoulder Taps
+        mock_input.side_effect = [
+            "chest",
+            "start",
+            "next",
+            "next",
+            "next",
+            "next",  # present 5th exercise
+            "quit",
+        ]
+
+        with pytest.raises(SystemExit):
+            main.workout()
+
+        output = " ".join(str(c) for c in mock_print.call_args_list)
+        assert "Shoulder Taps" in output  # the 5th/last exercise
+
+    @patch("builtins.print")
+    @patch("builtins.input")
+    def test_stats_works_after_skip(self, mock_input, mock_print):
+        """stats must not crash when used after skip (old IndexError bug)."""
+        mock_input.side_effect = [
+            "abs",
+            "start",
+            "next",
+            "skip",
+            "stats",
+            "quit",
+        ]
+
+        with pytest.raises(SystemExit):
+            main.workout()
+
+        output = " ".join(str(c) for c in mock_print.call_args_list)
+        assert "still need to be completed" in output
+        # The old code printed this apology; the bug is fixed so it must not appear.
+        assert "cannot use both the `skip` and `stats`" not in output
 
 
 if __name__ == "__main__":
