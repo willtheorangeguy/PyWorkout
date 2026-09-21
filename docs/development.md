@@ -51,9 +51,9 @@ python -m build
 
 ## Conventions
 
-* **Comments.** The codebase comments heavily. Match that when you touch `main.py`.
-* **No runtime dependencies.** PyWorkout uses only the standard library. Please keep it that way — it is why the executable build stays small and the Docker image stays simple.
-* **Versioning.** [Semantic versioning](https://semver.org/). The version appears in both `setup.cfg` and `pyproject.toml`; update them together.
+- **Comments.** The codebase comments heavily. Match that when you touch `main.py`.
+- **No runtime dependencies.** PyWorkout uses only the standard library. Please keep it that way — it is why the executable build stays small and the Docker image stays simple.
+- **Versioning.** [Semantic versioning](https://semver.org/). The version appears in both `setup.cfg` and `pyproject.toml`; update them together.
 
 ## Continuous Integration
 

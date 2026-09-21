@@ -17,10 +17,10 @@ abs = ["Situps\t", "Reverse Crunches", "Bicycle Crunches", "Flutter Kicks", "Leg
 abs_count = [25, 25, 25, 25, 25, 2]
 ```
 
-4. Add the name of the activity to the first list, in between double quotes (`""`).
-5. Add the number of reps for that activity to the second list.
-6. Navigate to the `elif activity.lower() == "next":` line.
-7. Find the `if`/`elif` statement for the muscle group you have selected. For example:
+1. Add the name of the activity to the first list, in between double quotes (`""`).
+2. Add the number of reps for that activity to the second list.
+3. Navigate to the `elif activity.lower() == "next":` line.
+4. Find the `if`/`elif` statement for the muscle group you have selected. For example:
 
 ```python
 if select == "abs":
@@ -33,8 +33,8 @@ if select == "abs":
             print("Run the `end` command to finish the workout. \n")
 ```
 
-8. Increase the number in the second line by the number of workouts you have added.
-9. Save and run the program!
+1. Increase the number in the second line by the number of workouts you have added.
+2. Save and run the program!
 
 ## Change the Number of Reps
 
@@ -48,8 +48,8 @@ Changing the number of reps of a workout is extremely easy!
 abs_count = [25, 25, 25, 25, 25, 2]
 ```
 
-4. Change the number to the actual number of that workout that you want to do. Each item in the list corresponds to the workout activity list in the variable above it. For example, the `abs` and `abs_count` list correspond to one another.
-5. Save the file and run the program!
+1. Change the number to the actual number of that workout that you want to do. Each item in the list corresponds to the workout activity list in the variable above it. For example, the `abs` and `abs_count` list correspond to one another.
+2. Save the file and run the program!
 
 ## Change the Videos
 
@@ -70,5 +70,5 @@ back_video = "D:\\Videos\\Workout Videos\\20 Minute Full Body Workout.mp4"
 chest_video = "D:\\Videos\\Workout Videos\\15 Minute Intense Bodyweight Workout.mp4"
 ```
 
-4. Change each of the variables to the **absolute** path of the video you want for each muscle group. **Double slashes (`\\`) are only required on Windows.**
-5. Save the file and run the program!
+1. Change each of the variables to the **absolute** path of the video you want for each muscle group. **Double slashes (`\\`) are only required on Windows.**
+2. Save the file and run the program!
